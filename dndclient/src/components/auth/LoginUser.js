@@ -1,36 +1,33 @@
 import React, { useState } from "react";
 import { Form, FormGroup, Label, Input, Button } from "reactstrap";
 
-const CreateUser = (props) => {
+const LoginUser = (props) => {
     const [email, setEmail] = useState("");
-    const [passwordhash, setPasswordHash] = useState("");
-    const [handle, setHandle] = useState("");
+    const [password, setPassword] = useState("");
 
     let handleSubmit = (event) => {
         event.preventDefault();
-        fetch("http://localhost:3000/user/register", {
-        
+        fetch(`http://localhost:3000/user/login`, {
+
             method: "POST",
             body: JSON.stringify({
-                user: { email: email, passwordhash: passwordhash, handle: handle, },
+                user: { email: email, passwordhash: password },
             }),
             headers: new Headers({
                 "Content-Type": "application/json",
             }),
         })
-    
             .then(
                 (response) => response.json()
             )
             .then((data) => {
                 props.updateToken(data.sessionToken);
             })
-            
-    };
+    }
 
     return (
         <div>
-            <h1>Signup</h1>
+            <h1>Login</h1>
             <Form onSubmit={handleSubmit}>
                 <FormGroup>
                     <Label htmlFor="email">Email Address</Label>
@@ -43,23 +40,15 @@ const CreateUser = (props) => {
                 <FormGroup>
                     <Label htmlFor="password">Password</Label>
                     <Input
-                        onChange={(e) => setPasswordHash(e.target.value)}
-                        name="passwordhash"
-                        value={passwordhash}
+                        onChange={(e) => setPassword(e.target.value)}
+                        name="password"
+                        value={password}
                     />
                 </FormGroup>
-                <FormGroup>
-                    <Label htmlFor="handle">DnD handle</Label>
-                    <Input
-                        onChange={(e) => setHandle(e.target.value)}
-                        name="handle"
-                        value={handle}
-                    />
-                </FormGroup>
-                <Button type="submit">Signup</Button>
+                <Button type="submit">Login</Button>
             </Form>
         </div>
     );
-};
+}
 
-export default CreateUser;
+export default LoginUser;

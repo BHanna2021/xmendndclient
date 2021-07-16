@@ -11,7 +11,7 @@ const LoginUser = (props) => {
 
             method: "POST",
             body: JSON.stringify({
-                user: { email: email, passwordhash: password },
+                user: { email: email, password: password },
             }),
             headers: new Headers({
                 "Content-Type": "application/json",
@@ -35,6 +35,7 @@ const LoginUser = (props) => {
                         onChange={(e) => setEmail(e.target.value)}
                         name="email"
                         value={email}
+                        required
                     />
                 </FormGroup>
                 <FormGroup>
@@ -43,6 +44,7 @@ const LoginUser = (props) => {
                         onChange={(e) => setPassword(e.target.value)}
                         name="password"
                         value={password}
+                        required
                     />
                 </FormGroup>
                 <Button type="submit">Login</Button>

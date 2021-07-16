@@ -3,7 +3,7 @@ import { Form, FormGroup, Label, Input, Button } from "reactstrap";
 
 const CreateUser = (props) => {
     const [email, setEmail] = useState("");
-    const [passwordhash, setPasswordHash] = useState("");
+    const [password, setPassword] = useState("");
     const [handle, setHandle] = useState("");
 
     let handleSubmit = (event) => {
@@ -12,7 +12,7 @@ const CreateUser = (props) => {
         
             method: "POST",
             body: JSON.stringify({
-                user: { email: email, passwordhash: passwordhash, handle: handle, },
+                user: { email: email, password: password, handle: handle, },
             }),
             headers: new Headers({
                 "Content-Type": "application/json",
@@ -38,14 +38,16 @@ const CreateUser = (props) => {
                         onChange={(e) => setEmail(e.target.value)}
                         name="email"
                         value={email}
+                        required
                     />
                 </FormGroup>
                 <FormGroup>
                     <Label htmlFor="password">Password</Label>
                     <Input
-                        onChange={(e) => setPasswordHash(e.target.value)}
-                        name="passwordhash"
-                        value={passwordhash}
+                        onChange={(e) => setPassword(e.target.value)}
+                        name="password"
+                        value={password}
+                        required
                     />
                 </FormGroup>
                 <FormGroup>

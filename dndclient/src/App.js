@@ -1,5 +1,8 @@
 import React, {useState, useEffect} from 'react';
-import Auth from './components/auth/Auth';
+import AuthLogin from './components/auth/AuthLogin';
+import AuthCreate from './components/auth/AuthCreate';
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import CharacterIndex from './components/character/CharacterIndex';
 import './App.css';
 
 function App() {
@@ -17,15 +20,16 @@ function App() {
     console.log(sessionToken);
   }
 
-  // const protectedViews = () => {
-  //   return (
-  //     // sessionToken === localStorage.getItem('token') ? <WorkoutIndex token={sessionToken}/> : <Auth updateToken={updateToken}/>
-  //     )
-  // }
+  const protectedViews = () => {
+    return (
+      sessionToken === localStorage.getItem('token') ? <CharacterIndex token={sessionToken}/> : <AuthLogin updateToken={updateToken}/>
+      )
+  }
 
   return (
-    <div className="App">
-      <Auth />
+    <div>
+      <AuthLogin />
+      {protectedViews()}
     </div>
   );
 }

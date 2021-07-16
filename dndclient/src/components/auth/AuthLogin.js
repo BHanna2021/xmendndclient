@@ -1,9 +1,8 @@
 import React from 'react';
 import LoginUser from "./LoginUser";
-// import CreateUser from "./CreateUser";
 import {Container, Row, Col} from 'reactstrap';
 
-const Auth = (props) => {
+const AuthLogin = (props) => {
 
     return (
         <Container className="auth-container">
@@ -16,4 +15,4 @@ const Auth = (props) => {
     )
 }
 
-export default Auth;
+export default AuthLogin;

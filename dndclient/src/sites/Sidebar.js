@@ -1,5 +1,5 @@
-import React from 'react';
-import { sidebar, ListGroup, ListGroupItem, ListGroupItemHeading, ListGroupItemText } from 'reactstrap';
+import React, { useState, useEffect } from 'react';
+import { sidebar, Button, Nav, NavItem, ListGroup, ListGroupItem, ListGroupItemHeading, ListGroupItemText } from 'reactstrap';
 
 // import {
 //     Route,
@@ -8,7 +8,9 @@ import { sidebar, ListGroup, ListGroupItem, ListGroupItemHeading, ListGroupItemT
 // } from 'react-router-dom';
 
 
-const Sidebar = () => {
+const Sidebar = (props) => {
+
+
     return (
         <div className='sidebar' id='sidebar'>
             <div className='sidebar-list-styling'>
@@ -17,6 +19,11 @@ const Sidebar = () => {
                     <h6>other info</h6>
                     <h6>other info</h6>
                 </ul>
+                <Nav className="ml-auto" navbar>
+                    <NavItem>
+                        <Button onClick={props.clickLogout}>Logout</Button>
+                    </NavItem>
+                </Nav>
                 <ListGroup className='sidebar_list'>
                     <ListGroupItem active>
                         <ListGroupItemHeading>Character Name</ListGroupItemHeading>

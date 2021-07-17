@@ -2,7 +2,6 @@ import React, {useState, useEffect} from 'react';
 import AuthLogin from './components/auth/AuthLogin';
 import AuthCreate from './components/auth/AuthCreate';
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-import CharacterIndex from './components/character/CharacterIndex';
 import './App.css';
 import CharacterIndex from './components/character/CharacterIndex';
 
@@ -22,6 +21,7 @@ function App() {
     console.log(sessionToken);
   }
 
+
   const protectedViews = () => {
     return (
       sessionToken === localStorage.getItem('token') ? <CharacterIndex token={sessionToken}/> : <AuthLogin updateToken={updateToken}/>
@@ -35,7 +35,7 @@ function App() {
 
       </header>
       <div className='main'>
-      <CharacterIndex />
+      {/* <CharacterIndex /> */}
       </div>
       <AuthLogin />
       {protectedViews()}

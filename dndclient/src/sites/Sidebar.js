@@ -1,5 +1,6 @@
 import React from 'react';
-import { sidebar } from 'reactstrap';
+import { sidebar, ListGroup, ListGroupItem, ListGroupItemHeading, ListGroupItemText } from 'reactstrap';
+
 // import {
 //     Route,
 //     Link,
@@ -12,14 +13,33 @@ const Sidebar = () => {
         <div className='sidebar' id='sidebar'>
             <div className='sidebar-list-styling'>
                 <ul className='sidebar-list-styling'>
-                    <h1>User Name</h1>
-                    <h4>other info</h4>
-                    <h4>other info</h4>
-                    {/* <li><Link to='/FeatureCard'>FeatureCard</Link></li>
-                    <li><Link to='/ListGroups'>ListGroups</Link></li>
-                    <li><Link to='/Carousel'>Carousel</Link></li>
-                    <li><Link to='/Forms'>Forms</Link></li> */}
+                    <h4>User Name</h4>
+                    <h6>other info</h6>
+                    <h6>other info</h6>
                 </ul>
+                <ListGroup className='sidebar_list'>
+                    <ListGroupItem active>
+                        <ListGroupItemHeading>Character Name</ListGroupItemHeading>
+                        <ListGroupItemText>
+                            Character Class
+                        </ListGroupItemText>
+                        <ListGroupItemText>
+                            Character Race
+                        </ListGroupItemText>
+                    </ListGroupItem>
+                    <ListGroupItem>
+                        <ListGroupItemHeading>List group item heading</ListGroupItemHeading>
+                        <ListGroupItemText>
+                            Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.
+                        </ListGroupItemText>
+                    </ListGroupItem>
+                    <ListGroupItem>
+                        <ListGroupItemHeading>List group item heading</ListGroupItemHeading>
+                        <ListGroupItemText>
+                            Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.
+                        </ListGroupItemText>
+                    </ListGroupItem>
+                </ListGroup>
             </div>
             {/* <div className='sidebar-route'>
                 <Switch>

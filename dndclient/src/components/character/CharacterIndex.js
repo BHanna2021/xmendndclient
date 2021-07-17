@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { } from 'reactstrap';
 import Sidebar from '../../sites/Sidebar';
 // import CharacterCarousel from './CharacterCarousel';
+import ViewCharacter from './ViewCharacter';
 
 const CharacterIndex = (props) => {
     const [characters, setCharacters] = useState([]);
@@ -29,9 +30,11 @@ const CharacterIndex = (props) => {
                 <nav>
                     <Sidebar />
                 </nav>
-                <h1>something to see</h1>
-                {/* <CharacterCarousel /> */}
-
+                <div className='content'>
+                    <h1>something to see</h1>
+                    <ViewCharacter />
+                    {/* <CharacterCarousel /> */}
+                </div>
             </div>
             <div className='footer'>
                 <h4>some footer text</h4>

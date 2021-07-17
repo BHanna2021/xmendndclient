@@ -4,7 +4,6 @@ import AuthCreate from './components/auth/AuthCreate';
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import CharacterIndex from './components/character/CharacterIndex';
 import './App.css';
-import CharacterIndex from './components/character/CharacterIndex';
 
 
 function App() {
@@ -35,9 +34,9 @@ function App() {
 
       </header>
       <div className='main'>
-      <CharacterIndex />
+      {/* <CharacterIndex /> */}
       </div>
-      <AuthLogin />
+      {/* <AuthLogin /> */}
       {protectedViews()}
 
     </div>

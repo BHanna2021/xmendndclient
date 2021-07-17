@@ -27,28 +27,33 @@ const LoginUser = (props) => {
 
     return (
         <div>
-            <h1>Login</h1>
-            <Form onSubmit={handleSubmit}>
-                <FormGroup>
-                    <Label htmlFor="email">Email Address</Label>
-                    <Input
-                        onChange={(e) => setEmail(e.target.value)}
-                        name="email"
-                        value={email}
-                        required
-                    />
-                </FormGroup>
-                <FormGroup>
-                    <Label htmlFor="password">Password</Label>
-                    <Input
-                        onChange={(e) => setPassword(e.target.value)}
-                        name="password"
-                        value={password}
-                        required
-                    />
-                </FormGroup>
-                <Button type="submit">Login</Button>
-            </Form>
+            <div>
+                <h1>Adventure Awaits</h1>
+            </div>
+            <div>
+                <h3>Login Here</h3>
+                <Form onSubmit={handleSubmit}>
+                    <FormGroup>
+                        <Label htmlFor="email">Email Address</Label>
+                        <Input
+                            onChange={(e) => setEmail(e.target.value)}
+                            name="email"
+                            value={email}
+                            required
+                        />
+                    </FormGroup>
+                    <FormGroup>
+                        <Label htmlFor="password">Password</Label>
+                        <Input
+                            onChange={(e) => setPassword(e.target.value)}
+                            name="password"
+                            value={password}
+                            required
+                        />
+                    </FormGroup>
+                    <Button type="submit">Login</Button>
+                </Form>
+            </div>
         </div>
     );
 }

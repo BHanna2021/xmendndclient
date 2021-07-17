@@ -5,7 +5,8 @@ import {Button,
         Label,
         Input,
         Row,
-        Col
+        Col,
+        ButtonGroup
     } from 'reactstrap';
 
 const CharacterCreator = (props) => {
@@ -68,7 +69,7 @@ const CharacterCreator = (props) => {
                     <Col md={6}>
                         <FormGroup>
                             <h3>Welcome to Character Creator!</h3>
-                            <p>Let's see where your imagination takes you.</p>
+                            <p>See where your imagination can take you.</p>
                         </FormGroup>
                     </Col>
                 <Col md={6}>
@@ -78,12 +79,8 @@ const CharacterCreator = (props) => {
                 <Row>
                     <Col md={6}>
                         <FormGroup>
-                            <Label htmlFor="race">Race:</Label>
-                        </FormGroup>
-                    </Col>
-                    <Col md={6}>
-                        <FormGroup>
-                            <Input type="select" name="race" value={race} onChange={(e) => setRace(e.target.value)} />
+                            <Label htmlFor="race">Race: </Label>
+                            <Input type="select" name="race" value={race} onChange={(e) => setRace(e.target.value)}>
                                 <option></option>
                                 <option value="Dragonborn">Dragonborn</option>
                                 <option value="Dwarf">Dwarf</option>
@@ -94,95 +91,126 @@ const CharacterCreator = (props) => {
                                 <option value="Halfling">Halfling</option>
                                 <option value="Human">Human</option>
                                 <option value="Tiefling">Tiefling</option>
+                            </Input>
                         </FormGroup>
                     </Col>
                 </Row>
                 <Row>
                     <Col md={6}>
                         <FormGroup>
-                            <Label htmlFor="Class">Class:</Label>
-                        </FormGroup>
-                    </Col>
-                    <Col md={6}>
-                        <FormGroup>
-                            <Input type="select" name="char_class" value={char_class} onChange={(e) => setChar_class(e.target.value)} />
+                            <Label htmlFor="Class">Class: </Label>
+                            <Input type="select" name="char_class" value={char_class} onChange={(e) => setChar_class(e.target.value)}>
                                 <option></option>
-                                <option>Artificer</option>
-                                <option>Barbarian</option>
-                                <option>Bard</option>
-                                <option>Blood Hunter</option>
-                                <option>Cleric</option>
-                                <option>Druid</option>
-                                <option>Fighter</option>
-                                <option>Monk</option>
-                                <option>Paladin</option>
-                                <option>Ranger</option>
-                                <option>Rogue</option>
-                                <option>Sorcerer</option>
-                                <option>Warlock</option>
-                                <option>Wizard</option>
+                                <option value="Artificer">Artificer</option>
+                                <option value="Barbarian">Barbarian</option>
+                                <option value="Bard">Bard</option>
+                                <option value="Blood Hunter">Blood Hunter</option>
+                                <option value="Cleric">Cleric</option>
+                                <option value="Druid">Druid</option>
+                                <option value="Fighter">Fighter</option>
+                                <option value="Monk">Monk</option>
+                                <option value="Paladin">Paladin</option>
+                                <option value="Ranger">Ranger</option>
+                                <option value="Rogue">Rogue</option>
+                                <option value="Sorcerer">Sorcerer</option>
+                                <option value="Warlock">Warlock</option>
+                                <option value="Wizard">Wizard</option>
+                            </Input>
                         </FormGroup>
                     </Col>
                 </Row>
                 <Row>
                     <Col md={2}>
                         <FormGroup>
-                            <Label htmlFor="weight">Weight:</Label>
-                        </FormGroup>
-                    </Col>
-                    <Col md={2}>
-                        <FormGroup>
+                            <Label htmlFor="weight">Weight: </Label>
                             <Input type="number" name="weight" value={weight} onChange={(e) => setWeight(e.target.value)} />
-                            <Label htmlFor="weight">lbs</Label>
+                            <Label htmlFor="weight"> lbs</Label>
                         </FormGroup>
                     </Col>
                     <Col md={2}>
                         <FormGroup>
-                            <Label htmlFor="height">Height:</Label>
+                            <Label htmlFor="height">Height: </Label>
+                            <Input type="select" name="height_ft" value={height_ft} onChange={(e) => setHeight_ft(e.target.value)}>
+                                <option></option>
+                                <option>0</option>
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>4</option>
+                                <option>5</option>
+                                <option>6</option>
+                                <option>7</option>
+                                <option>8</option>
+                                <option>9</option>
+                            </Input>
+                            <Label htmlFor="height_ft"> ft </Label>
+                            <Input type="select" name="height_in" value={height_in} onChange={(e) => setHeight_in(e.target.value)}>
+                                <option></option>
+                                <option>0</option>
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>4</option>
+                                <option>5</option>
+                                <option>6</option>
+                                <option>7</option>
+                                <option>8</option>
+                                <option>9</option>
+                                <option>10</option>
+                                <option>11</option>
+                            </Input>
+                            <Label htmlFor="height_in"> in</Label>
                         </FormGroup>
                     </Col>
                     <Col md={2}>
-                        <FormGroup>
-                            <Input type="select" name="height_ft" value={height_ft} onChange={(e) => setHeight_ft(e.target.value)} />
-                            <Label htmlFor="height_ft">ft</Label>
-                        </FormGroup>
-                    </Col>
-                    <Col md={2}>
-                        <FormGroup>
-                            <Input type="select" name="height_in" value={height_in} onChange={(e) => setHeight_in(e.target.value)} />
-                            <Label htmlFor="height_in">in</Label>
-                        </FormGroup>
+                        
                     </Col>
                 </Row>
                 <Row>
-                    <Col md={6}>
-                        <FormGroup>
-                            <Label htmlFor="gender">Gender:</Label>
-                        </FormGroup>
-                    </Col>
                     <Col md={2}>
                         <FormGroup>
+                            <Label htmlFor="gender" value={gender}>Gender: </Label>
                             <Label check>
-                                <Input type="radio" name="female" value={gender} onChange={(e) => setGender(e.target.value)} />
+                                <Input type="radio" name="female" value="Female" onChange={(e) => setGender(e.target.value)} />
                                 Female
                             </Label>
-                        </FormGroup>
-                    </Col>
-                    <Col md={2}>
-                        <FormGroup>
                             <Label check>
-                                <Input type="radio" name="nonbinary" value={gender} onChange={(e) => setGender(e.target.value)} />
+                                <Input type="radio" name="nonbinary" value="Non-Binary" onChange={(e) => setGender(e.target.value)} />
                                 Non-Binary
                             </Label>
-                        </FormGroup>
-                    </Col>
-                    <Col md={2}>
-                        <FormGroup>
                             <Label check>
-                                <Input type="radio" name="male" value={gender} onChange={(e) => setGender(e.target.value)} />
+                                <Input type="radio" name="male" value="Male" onChange={(e) => setGender(e.target.value)} />
                                 Male
                             </Label>
                         </FormGroup>
+                    </Col>
+                </Row>
+                <Row>
+                    <Label htmlFor="alignment" value={alignment}>Alignment:</Label>
+                </Row>
+                <Row>
+                    <Col md={3}>
+                        <ButtonGroup vertical>
+                            <Button value="Lawful Good">Lawful Good</Button>
+                            <Button value="Lawful Neutral">Lawful Neutral</Button>
+                            <Button value="Lawful Evil">Lawful Evil</Button>
+                        </ButtonGroup>
+                    </Col>
+                    <Col md={1}></Col>
+                    <Col md={3}>
+                        <ButtonGroup vertical>
+                            <Button value="Neutral Good">Neutral Good</Button>
+                            <Button value="Neutral">Neutral</Button>
+                            <Button value="Neutral Evil">Neutral Evil</Button>
+                        </ButtonGroup>
+                    </Col>
+                    <Col md={1}></Col>
+                    <Col md={3}>
+                        <ButtonGroup vertical>
+                            <Button value="Chaotic Good">Chaotic Good</Button>
+                            <Button value="Chaotic Neutral">Chaotic Neutral</Button>
+                            <Button value="Chaotic Evil">Chaotic Evil</Button>
+                        </ButtonGroup>
                     </Col>
                 </Row>
             </Form>

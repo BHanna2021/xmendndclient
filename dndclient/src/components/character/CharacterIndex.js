@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { } from 'reactstrap';
 import Sidebar from '../../sites/Sidebar';
+import CharacterCreator from './CreateCharacter';
 // import CharacterCarousel from './CharacterCarousel';
 import ViewCharacter from './ViewCharacter';
 
@@ -52,9 +53,10 @@ const CharacterIndex = (props) => {
                 <div className='content'>
                     <h1>something to see</h1>
                     <div class="d-grid gap-2 col-6 mx-auto">
-                        <button class="btn btn-primary" type="button">Create a Character</button>
-                    </div>
-                    <br />
+                            <button class="btn btn-primary" type="button">Create a Character</button>
+                            {/* <CharacterCreator /> */}
+                        </div>
+                        <br />
                     <ViewCharacter />
                     {/* <CharacterCarousel /> */}
                 </div>

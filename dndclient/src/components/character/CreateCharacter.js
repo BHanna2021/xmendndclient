@@ -28,6 +28,7 @@ const CharacterCreator = (props) => {
     const [level, setLevel] = useState('');
     const [experience, setExperience] = useState('');
     const [modalOpen, setModalOpen] = useState(true);
+    const [activeButton, setActiveButton] = useState(false);
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -70,6 +71,11 @@ const CharacterCreator = (props) => {
 
     const closeModal = () => {
         setModalOpen(false)
+        props.toggleCreateOff()
+    }
+
+    const selectAlign = () => {
+        setActiveButton(true)
     }
 
     return(
@@ -229,24 +235,24 @@ const CharacterCreator = (props) => {
                 <Row>
                     <Col md={4}>
                         <ButtonGroup vertical>
-                            <ButtonToggle value="Lawful Good" color="primary">Lawful Good</ButtonToggle>
-                            <ButtonToggle value="Lawful Neutral" color="info">Lawful Neutral</ButtonToggle>
-                            <ButtonToggle value="Lawful Evil" color="warning">Lawful Evil</ButtonToggle>
+                            <ButtonToggle value="Lawful Good" color="primary" name="alignment" onClickCapture={(e) => setAlignment(e.target.value)}>Lawful Good</ButtonToggle>
+                            <ButtonToggle value="Lawful Neutral" color="info" name="alignment" onClickCapture={(e) => setAlignment(e.target.value)}>Lawful Neutral</ButtonToggle>
+                            <ButtonToggle value="Lawful Evil" color="warning" name="alignment" onClickCapture={(e) => setAlignment(e.target.value)}>Lawful Evil</ButtonToggle>
                         </ButtonGroup>
                     </Col>
                     <Col md={4}>
                         <ButtonGroup vertical>
-                            <ButtonToggle value="Neutral Good" color="primary">Neutral Good</ButtonToggle>
-                            <ButtonToggle value="Neutral" color="info">Neutral</ButtonToggle>
-                            <ButtonToggle value="Neutral Evil" color="warning">Neutral Evil</ButtonToggle>
+                            <ButtonToggle value="Neutral Good" color="primary" name="alignment" onClickCapture={(e) => setAlignment(e.target.value)}>Neutral Good</ButtonToggle>
+                            <ButtonToggle value="Neutral" color="info" name="alignment" onClickCapture={(e) => setAlignment(e.target.value)}>Neutral</ButtonToggle>
+                            <ButtonToggle value="Neutral Evil" color="warning" name="alignment" onClickCapture={(e) => setAlignment(e.target.value)}>Neutral Evil</ButtonToggle>
                         </ButtonGroup>
                     </Col>
 
                     <Col md={4}>
                         <ButtonGroup vertical>
-                            <ButtonToggle value="Chaotic Good" color="primary">Chaotic Good</ButtonToggle>
-                            <ButtonToggle value="Chaotic Neutral" color="info">Chaotic Neutral</ButtonToggle>
-                            <ButtonToggle value="Chaotic Evil" color="warning">Chaotic Evil</ButtonToggle>
+                            <ButtonToggle value="Chaotic Good" color="primary" name="alignment" onClickCapture={(e) => setAlignment(e.target.value)}>Chaotic Good</ButtonToggle>
+                            <ButtonToggle value="Chaotic Neutral" color="info" name="alignment" onClickCapture={(e) => setAlignment(e.target.value)}>Chaotic Neutral</ButtonToggle>
+                            <ButtonToggle value="Chaotic Evil" color="warning" name="alignment" onClickCapture={(e) => setAlignment(e.target.value)}>Chaotic Evil</ButtonToggle>
                         </ButtonGroup>
                     </Col>
                 </Row>
@@ -256,7 +262,7 @@ const CharacterCreator = (props) => {
                 <Row>
                     <Col>
                         <FormGroup>
-                            <Label for="background" value={background}>Background: </Label>
+                            <Label for="background">Background: </Label>
                             <Input type="select" name="background" value={background} onChange={(e) => setBackground(e.target.value)}>
                                 <option></option>
                                 <option value="Acolyte">Acolyte</option>
@@ -314,6 +320,19 @@ const CharacterCreator = (props) => {
                 </Row>
                 <Row>
                     <br/>
+                </Row>
+                <Row>
+                    <Col md={6}>
+                        <Label for="level">Level: </Label>
+                        <Input type="number" name="level" value={level} onChange={(e) => setLevel(e.target.value)}/>
+                    </Col>
+                    <Col md={6}>
+                        <Label for="experience">Experience: </Label>
+                        <Input type="text" name="experience" value={experience} onChange={(e) => setExperience(e.target.value)}/>
+                    </Col>
+                </Row>
+                <Row>
+                    <br />
                 </Row>
                 <Row>
                     <Col md={2}>

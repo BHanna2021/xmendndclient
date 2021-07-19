@@ -68,7 +68,7 @@ const CharacterIndex = (props) => {
                         <button class="btn btn-primary" type="button" onClick={toggleCreateOn}>
                             Create a Character
                             </button>
-                            {createActive ? <CharacterCreator toggleCreateOn={toggleCreateOn} token={props.token} /> : <></>}
+                            {createActive ? <CharacterCreator toggleCreateOff={toggleCreateOff} token={props.token} /> : <></>}
                                 
                             {/* <CharacterCreator /> */}
                         </div>

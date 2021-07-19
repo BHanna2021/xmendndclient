@@ -3,6 +3,7 @@ import AuthLogin from './components/auth/AuthLogin';
 import AuthCreate from './components/auth/AuthCreate';
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import './App.css';
+import CharacterIndex from './components/character/CharacterIndex';
 
 
 function App() {

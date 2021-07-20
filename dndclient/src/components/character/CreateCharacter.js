@@ -6,8 +6,14 @@ import {Button,
         Input,
         Row,
         Col,
-        ButtonGroup
+        ButtonGroup,
+        ButtonToggle,
+        Modal,
+        ModalHeader,
+        ModalBody,
+        ModalFooter
     } from 'reactstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const CharacterCreator = (props) => {
     const [name, setName] = useState('');
@@ -21,6 +27,8 @@ const CharacterCreator = (props) => {
     const [background, setBackground] = useState('');
     const [level, setLevel] = useState('');
     const [experience, setExperience] = useState('');
+    const [modalOpen, setModalOpen] = useState(true);
+    const [activeButton, setActiveButton] = useState(false);
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -61,20 +69,35 @@ const CharacterCreator = (props) => {
         })
     }
 
+    const closeModal = () => {
+        setModalOpen(false)
+        props.toggleCreateOff()
+    }
+
+    const selectAlign = () => {
+        setActiveButton(true)
+    }
+
     return(
         <>
-        <h2>DnD Character Creator</h2>
-            <Form onSubmit={handleSubmit}>
+        <Modal isOpen={modalOpen}>
+                <ModalHeader>
+                    <h2>DnD Character Creator</h2>
+                </ModalHeader>
+                <ModalBody>
+                <Form onSubmit={handleSubmit}>
                 <Row form>
-                    <Col md={6}>
+                    <Col md={12}>
                         <FormGroup>
                             <h3>Welcome to Character Creator!</h3>
                             <p>See where your imagination can take you.</p>
                         </FormGroup>
                     </Col>
-                <Col md={6}>
+                </Row>
+                <Row>
+                    <Col md={6}>
                     
-                </Col>
+                    </Col>
                 </Row>
                 <Row>
                     <Col md={6}>
@@ -94,8 +117,6 @@ const CharacterCreator = (props) => {
                             </Input>
                         </FormGroup>
                     </Col>
-                </Row>
-                <Row>
                     <Col md={6}>
                         <FormGroup>
                             <Label htmlFor="Class">Class: </Label>
@@ -120,14 +141,17 @@ const CharacterCreator = (props) => {
                     </Col>
                 </Row>
                 <Row>
-                    <Col md={2}>
+                    <br/>
+                </Row>
+                <Row>
+                    <Col md={6}>
                         <FormGroup>
                             <Label htmlFor="weight">Weight: </Label>
-                            <Input type="number" name="weight" value={weight} onChange={(e) => setWeight(e.target.value)} />
+                            <Input size="sm" type="number" name="weight" value={weight} onChange={(e) => setWeight(e.target.value)} />
                             <Label htmlFor="weight"> lbs</Label>
                         </FormGroup>
                     </Col>
-                    <Col md={2}>
+                    <Col md={3}>
                         <FormGroup>
                             <Label htmlFor="height">Height: </Label>
                             <Input type="select" name="height_ft" value={height_ft} onChange={(e) => setHeight_ft(e.target.value)}>
@@ -144,6 +168,11 @@ const CharacterCreator = (props) => {
                                 <option>9</option>
                             </Input>
                             <Label htmlFor="height_ft"> ft </Label>
+                        </FormGroup>
+                    </Col>
+                    <Col md={3}>
+                        <FormGroup>
+                            <Label htmlFor="height"></Label>
                             <Input type="select" name="height_in" value={height_in} onChange={(e) => setHeight_in(e.target.value)}>
                                 <option></option>
                                 <option>0</option>
@@ -160,60 +189,166 @@ const CharacterCreator = (props) => {
                                 <option>11</option>
                             </Input>
                             <Label htmlFor="height_in"> in</Label>
-                        </FormGroup>
-                    </Col>
-                    <Col md={2}>
-                        
+                            </FormGroup>
                     </Col>
                 </Row>
                 <Row>
+                    <br/>
+                </Row>
+                <Row>
                     <Col md={2}>
+                        <Label htmlFor="gender" value={gender}>Gender: </Label>
+                    </Col>
+                    <Col md={3}>
                         <FormGroup>
-                            <Label htmlFor="gender" value={gender}>Gender: </Label>
                             <Label check>
-                                <Input type="radio" name="female" value="Female" onChange={(e) => setGender(e.target.value)} />
-                                Female
+                                <Input type="radio" name="gender" value="Female" onChange={(e) => setGender(e.target.value)} />
+                                &nbsp;Female
                             </Label>
+                        </FormGroup>
+                    </Col>
+                    <Col md={4}>
+                        <FormGroup>
                             <Label check>
-                                <Input type="radio" name="nonbinary" value="Non-Binary" onChange={(e) => setGender(e.target.value)} />
-                                Non-Binary
+                                <Input type="radio" name="gender" value="Non-Binary" onChange={(e) => setGender(e.target.value)} />
+                                &nbsp;Non-Binary
                             </Label>
+                        </FormGroup>
+                    </Col>
+                    <Col md={3}>
+                        <FormGroup>
                             <Label check>
-                                <Input type="radio" name="male" value="Male" onChange={(e) => setGender(e.target.value)} />
-                                Male
+                                <Input type="radio" name="gender" value="Male" onChange={(e) => setGender(e.target.value)} />
+                                &nbsp;Male
                             </Label>
                         </FormGroup>
                     </Col>
                 </Row>
                 <Row>
-                    <Label htmlFor="alignment" value={alignment}>Alignment:</Label>
+                    <br/>
                 </Row>
                 <Row>
-                    <Col md={3}>
+                    <Col md={12} className="text-center">
+                        <Label htmlFor="alignment" value={alignment}>Alignment:</Label>
+                    </Col>
+                </Row>
+                <Row>
+                    <Col md={4}>
                         <ButtonGroup vertical>
-                            <Button value="Lawful Good">Lawful Good</Button>
-                            <Button value="Lawful Neutral">Lawful Neutral</Button>
-                            <Button value="Lawful Evil">Lawful Evil</Button>
+                            <ButtonToggle value="Lawful Good" color="primary" name="alignment" onClickCapture={(e) => setAlignment(e.target.value)}>Lawful Good</ButtonToggle>
+                            <ButtonToggle value="Lawful Neutral" color="info" name="alignment" onClickCapture={(e) => setAlignment(e.target.value)}>Lawful Neutral</ButtonToggle>
+                            <ButtonToggle value="Lawful Evil" color="warning" name="alignment" onClickCapture={(e) => setAlignment(e.target.value)}>Lawful Evil</ButtonToggle>
                         </ButtonGroup>
                     </Col>
-                    <Col md={1}></Col>
-                    <Col md={3}>
+                    <Col md={4}>
                         <ButtonGroup vertical>
-                            <Button value="Neutral Good">Neutral Good</Button>
-                            <Button value="Neutral">Neutral</Button>
-                            <Button value="Neutral Evil">Neutral Evil</Button>
+                            <ButtonToggle value="Neutral Good" color="primary" name="alignment" onClickCapture={(e) => setAlignment(e.target.value)}>Neutral Good</ButtonToggle>
+                            <ButtonToggle value="Neutral" color="info" name="alignment" onClickCapture={(e) => setAlignment(e.target.value)}>Neutral</ButtonToggle>
+                            <ButtonToggle value="Neutral Evil" color="warning" name="alignment" onClickCapture={(e) => setAlignment(e.target.value)}>Neutral Evil</ButtonToggle>
                         </ButtonGroup>
                     </Col>
-                    <Col md={1}></Col>
-                    <Col md={3}>
+
+                    <Col md={4}>
                         <ButtonGroup vertical>
-                            <Button value="Chaotic Good">Chaotic Good</Button>
-                            <Button value="Chaotic Neutral">Chaotic Neutral</Button>
-                            <Button value="Chaotic Evil">Chaotic Evil</Button>
+                            <ButtonToggle value="Chaotic Good" color="primary" name="alignment" onClickCapture={(e) => setAlignment(e.target.value)}>Chaotic Good</ButtonToggle>
+                            <ButtonToggle value="Chaotic Neutral" color="info" name="alignment" onClickCapture={(e) => setAlignment(e.target.value)}>Chaotic Neutral</ButtonToggle>
+                            <ButtonToggle value="Chaotic Evil" color="warning" name="alignment" onClickCapture={(e) => setAlignment(e.target.value)}>Chaotic Evil</ButtonToggle>
                         </ButtonGroup>
                     </Col>
                 </Row>
-            </Form>
+                <Row>
+                    <br/>
+                </Row>
+                <Row>
+                    <Col>
+                        <FormGroup>
+                            <Label for="background">Background: </Label>
+                            <Input type="select" name="background" value={background} onChange={(e) => setBackground(e.target.value)}>
+                                <option></option>
+                                <option value="Acolyte">Acolyte</option>
+                                <option value="Anthropologist">Anthropologist</option>
+                                <option value="Archaeologist">Archaeologist</option>
+                                <option value="Athlete">Athlete</option>
+                                <option value="Charlatan">Charlatan</option>
+                                <option value="City Watch">City Watch</option>
+                                <option value="Clan Crafter">Clan Crafter</option>
+                                <option value="Cloistered Scholar">Cloistered Scholar</option>
+                                <option value="Courtier">Courtier</option>
+                                <option value="Criminal">Criminal</option>
+                                <option value="Entertainer">Entertainer</option>
+                                <option value="Faceless">Faceless</option>
+                                <option value="Faction Agent">Faction Agent</option>
+                                <option value="Far Traveler">Far Traveler</option>
+                                <option value="Fisher">Fisher</option>
+                                <option value="Folk Hero">Folk Hero</option>
+                                <option value="Gladiator">Gladiator</option>
+                                <option value="Guild Artisan">Guild Artisan</option>
+                                <option value="Guild Merchant">Guild Merchant</option>
+                                <option value="Haunted One">Haunted One</option>
+                                <option value="Hermit">Hermit</option>
+                                <option value="House Agent">House Agent</option>
+                                <option value="Inheritor">Inheritor</option>
+                                <option value="Knight">Knight</option>
+                                <option value="Knight of the Order">Knight of the Order</option>
+                                <option value="Marine">Marine</option>
+                                <option value="Mercenary Veteran">Mercenary Veteran</option>
+                                <option value="Noble">Noble</option>
+                                <option value="Outlander">Outlander</option>
+                                <option value="Pirate">Pirate</option>
+                                <option value="Sage">Sage</option>
+                                <option value="Sailor">Sailor</option>
+                                <option value="Shipwright">Shipwright</option>
+                                <option value="Smuggler">Smuggler</option>
+                                <option value="Soldier">Soldier</option>
+                                <option value="Spy">Spy</option>
+                                <option value="Urban Bounty Hunter">Urban Bounty Hunter</option>
+                                <option value="Urchin">Urchin</option>
+                                <option value="Uthgardt Tribe Member">Uthgardt Tribe Member</option>
+                                <option value="Waterdhavian Noble">Waterdhavian Noble</option>
+                            </Input>
+                        </FormGroup>
+                    </Col>
+                </Row>
+                <Row>
+                    <br/>
+                </Row>
+                <Row>
+                    <Col md={12}>
+                    <Label for="name">Character Name: </Label>
+                    <Input type="text"  name="name" value={name} onChange={(e) => setName(e.target.value)}/>
+                    </Col>
+                </Row>
+                <Row>
+                    <br/>
+                </Row>
+                <Row>
+                    <Col md={6}>
+                        <Label for="level">Level: </Label>
+                        <Input type="number" name="level" value={level} onChange={(e) => setLevel(e.target.value)}/>
+                    </Col>
+                    <Col md={6}>
+                        <Label for="experience">Experience: </Label>
+                        <Input type="text" name="experience" value={experience} onChange={(e) => setExperience(e.target.value)}/>
+                    </Col>
+                </Row>
+                <Row>
+                    <br />
+                </Row>
+                <Row>
+                    <Col md={2}>
+                    </Col>
+                    <Col md={3}>
+                        <Button type="submit">Create!</Button>
+                    </Col>
+                    <Col md={2}>
+                    </Col>
+                    <Col md={3}>
+                        <Button onClick={closeModal}>Cancel</Button>
+                    </Col>
+                </Row>
+                </Form>
+                </ModalBody>
+            </Modal>
         </>
     )
 }

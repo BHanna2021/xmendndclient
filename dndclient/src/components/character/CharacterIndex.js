@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { } from 'reactstrap';
 import { Link, Route, Switch } from 'react-router-dom';
 import Sidebar from '../../sites/Sidebar';
-// import CharacterCreator from './CreateCharacter';
+import CharacterCreator from './CreateCharacter';
 import CharacterCarousel from './CharacterCarousel';
 import ViewCharacter from './ViewCharacter';
 

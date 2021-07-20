@@ -67,13 +67,10 @@ const Sidebar = (props) => {
                 <br/>
             </div>
             <Container>
-                <Row>
-                    <Col md="3">
+
                         <CharacterTable characters={characters} displayCharacter={displayCharacter} fetchCharacters={fetchCharacters} token={props.token} />
                         {/* <ViewCharacter characters={characters} displayCharacter={displayCharacter} fetchCharacters={fetchCharacters} token={props.token} /> */}
-                    </Col>
                     {updateActive ? <ViewCharacter characterToView={characterToView} setCharacterToView={setCharacterToView} updateOff={updateOff} token={props.token} updateOn={updateOn} fetchCharacters={fetchCharacters} /> : <></>}
-                </Row>
             </Container>
         </div>
     );

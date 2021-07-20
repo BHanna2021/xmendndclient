@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import AuthLogin from './components/auth/AuthLogin';
 import AuthCreate from './components/auth/AuthCreate';
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { Switch, Route, Link } from "react-router-dom";
 import './App.css';
 import CharacterIndex from './components/character/CharacterIndex';
 
@@ -20,6 +20,10 @@ function App() {
     console.log(sessionToken);
   }
 
+  const clearToken = () => {
+    localStorage.clear();
+    setSessionToken('');
+  }
 
   const protectedViews = () => {
     return (
@@ -28,7 +32,6 @@ function App() {
   }
 
   return (
-    <Router>
       <div className="App" >
         <ul>
           <li >
@@ -41,7 +44,7 @@ function App() {
             {protectedViews()}
           </li>
         </ul>
-        </div>
+        
 
       <Switch>
         <Route path="/Login">
@@ -51,7 +54,7 @@ function App() {
           <AuthCreate />
         </Route>
       </Switch>
-    </Router>
+      </div>
   );
 }
 

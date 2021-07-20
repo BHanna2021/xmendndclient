@@ -3,7 +3,13 @@ import React from 'react';
 import { Carousel } from 'react-responsive-carousel';
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // ???
 
-function CharacterCarousel(props) {
+const CharacterCarousel = (props) => {
+    const carouselMapper = () => {
+        return props.characters.map((character, index) => {
+            
+        })
+    }
+
     return (
         <div className="carousel=wrapper">
             <div className='character-carousel' id='carousel'>

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { } from 'reactstrap';
+import { Link, Route, Switch } from 'react-router-dom';
 import Sidebar from '../../sites/Sidebar';
 // import CharacterCreator from './CreateCharacter';
 import CharacterCarousel from './CharacterCarousel';
@@ -9,12 +10,15 @@ const CharacterIndex = (props) => {
     const [characters, setCharacters] = useState([]);
 
     const [sessionToken, setSessionToken] = useState('');
+    const [createActive, setCreateActive] = useState(false);
+    const [modalOpen, setModalOpen] = useState(true);
 
     useEffect(() => {
         if (localStorage.getItem('token')) {
             setSessionToken(localStorage.getItem('token'));
         }
     }, [])
+
 
     // const updateToken = (newToken) => {
     //     localStorage.setItem('token', newToken);
@@ -25,6 +29,14 @@ const CharacterIndex = (props) => {
     const clearToken = () => {
         localStorage.clear();
         setSessionToken('');
+    }
+
+    const toggleCreateOn = () => {
+        setCreateActive(true)
+    }
+
+    const toggleCreateOff = () => {
+        setCreateActive(false)
     }
 
     const fetchCharacters = () => {
@@ -55,8 +67,13 @@ const CharacterIndex = (props) => {
                 </nav>
                 <div className='content'>
                     <h1>something to see</h1>
-                    <div class="d-grid gap-1 col-8 mx-auto">
-                            <button class="btn btn-primary" type="button">Create a Character</button>
+
+                    <div class="d-grid gap-2 col-6 mx-auto">
+                        <button class="btn btn-primary" type="button" onClick={toggleCreateOn}>
+                            Create a Character
+                            </button>
+                            {createActive ? <CharacterCreator toggleCreateOff={toggleCreateOff} token={props.token} /> : <></>}
+                                
                             {/* <CharacterCreator /> */}
                         </div>
                         <br />

@@ -41,7 +41,7 @@ const CharacterIndex = (props) => {
             })
     }
     useEffect(() => {
-        fetchCharacters();
+        // fetchCharacters();
     }, [])
 
     return (
@@ -51,7 +51,7 @@ const CharacterIndex = (props) => {
             </div>
             <div className='layout'>
                 <nav>
-                    <Sidebar clickLogout={clearToken} token={props.token} />
+                    <Sidebar clickLogout={clearToken} token={props.token} characters={characters} />
                 </nav>
                 <div className='content'>
                     <h1>something to see</h1>

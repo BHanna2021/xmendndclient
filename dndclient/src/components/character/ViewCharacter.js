@@ -2,7 +2,12 @@ import React, { useState, useEffect } from 'react';
 import { Button } from 'reactstrap';
 
 const ViewCharacter = (props) => {
-    
+    const [characterToView, setCharacterToView] = useState(props.characterToView)
+
+    useEffect(() => {
+        console.log(characterToView)
+    }, [])
+
     const deleteCharacter = (characters) => {
         fetch(`http://localhost:3000/character/${characters.id}`, {
             method: 'DELETE',
@@ -15,6 +20,7 @@ const ViewCharacter = (props) => {
 
     const cardMapper = () => {
         return props.characters.map((character, index) => {
+            console.log(character.id);
             return(
                 <div id="results">
                 <td key={index}>
@@ -72,6 +78,7 @@ const ViewCharacter = (props) => {
 
     return (
         <div className='character_view'>
+            <p>{props.characterToView}</p>
             <div id="featurecard" class="card text-center col-md-6 offset-md-3">
                 <div class="card-header">
                     Featured
@@ -83,7 +90,7 @@ const ViewCharacter = (props) => {
                         <table scope="col" id="table2">
                             <div id='col1'>
                                 <tr>
-                                    <th>Name:</th>
+                                    <th>Name: { characterToView ? characterToView.name : "test"}    </th>
                                 </tr>
                                 <tr>
                                     <th>Gender:</th>
@@ -118,7 +125,7 @@ const ViewCharacter = (props) => {
                                 </tr>
                             </div>
                             <tbody id="col2">
-                                {cardMapper()}
+                                {/* {cardMapper()} */}
                             </tbody>
                         </table>
                     </div>
@@ -138,48 +145,3 @@ const ViewCharacter = (props) => {
 }
 
 export default ViewCharacter;
-
-
-/*
-
-<table>
-    <div id='col1'>
-        <tr>
-            <th>Name:</th>
-        </tr>
-        <tr>
-            <th>Gender:</th>
-        </tr>
-        <tr>
-            <th>Height-ft:</th>
-        </tr>
-        <tr>
-            <th>Height-inches:</th>
-        </tr>
-        <tr>
-            <th>Weight:</th>
-        </tr>
-    </div>
-    <div id='col2'>
-        <tr>
-            <th>Race:</th>
-        </tr>
-        <tr>
-            <th>Class:</th>
-        </tr>
-        <tr>
-            <th>Alignment:</th>
-        </tr>
-        <tr>
-            <th>Background:</th>
-        </tr>
-        <tr>
-            <th>Level:</th>
-        </tr>
-        <tr>
-            <th>Experience:</th>
-        </tr>
-    </div>
-</table>
-
-*/

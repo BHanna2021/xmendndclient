@@ -1,22 +1,25 @@
 import React from 'react';
-import './App.css';
+// import './App.css';
 import { Carousel } from 'react-responsive-carousel';
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // ???
 
-function CharacterCarousel() {
+function CharacterCarousel(props) {
     return (
         <div className="carousel=wrapper">
+            <div className='character-carousel' id='carousel'>
             <Carousel>
                 <div>
-                    <img src="dndclient\xmendndclient\dndclient\public\assets\Image1.jpg" alt="" />
+                    <img src="Image1.jpg" alt="" />
                 </div>
                 <div>
-                    <img src="dndclient\xmendndclient\dndclient\public\assets\Image2.jpg" alt="" />
+                    <img src="Image2.jpg" alt="" />
                 </div>
                 <div>
-                    <img src="dndclient\xmendndclient\dndclient\public\assets\Image3.jpg" alt="" />
+                    <img src="Image3.jpg" alt="" />
                 </div>
             </Carousel>
+            </div>
+            
         </div>
     );
 }

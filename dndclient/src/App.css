@@ -49,6 +49,7 @@ h6 {
 .App-loginSite {
   list-style: none;
 }
+
 ul {
   list-style-type: none;
   margin: 0%;
@@ -104,10 +105,10 @@ ul {
   margin: 0 auto;
 }
 
-.characterinfo {
+/* .characterinfo {
   display: grid;
   grid-template-columns: 50% 50%;
-}
+} */
 
 #sidebar {
   background-color: #943400;
@@ -126,4 +127,49 @@ ul {
 
 #featurecard {
   list-style-type: none;
+}
+
+#carousel {
+  border: 2px red solid;
+  max-width: 350px;
+  max-height: 350px;
+}
+
+#table {
+  display: grid;
+  grid-template-columns: 50% 50%;
+}
+
+#firstcol {
+  grid-column: 1 / 2;
+}
+
+#secondcol {
+  grid-column: 2 / 3;
+}
+
+#table2 {
+  display: grid;
+  grid-template-columns: 50% 50%;
+}
+
+#col1 {
+  grid-column: 1 / 2;
+  text-align: right;
+  padding-left: 40%;
+}
+
+#col2 {
+  grid-column: 2 / 3;
+  text-align: left;
+  justify-content: left;
+}
+
+#results {
+
+}
+
+#buttons {
+
+
 }

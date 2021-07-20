@@ -2,23 +2,23 @@ import React, { useState, useEffect } from 'react';
 import { } from 'reactstrap';
 import { Link, Route, Switch } from 'react-router-dom';
 import Sidebar from '../../sites/Sidebar';
-import CharacterCreator from './CreateCharacter';
-// import CharacterCarousel from './CharacterCarousel';
+// import CharacterCreator from './CreateCharacter';
+import CharacterCarousel from './CharacterCarousel';
 import ViewCharacter from './ViewCharacter';
 
 const CharacterIndex = (props) => {
     const [characters, setCharacters] = useState([]);
 
     const [sessionToken, setSessionToken] = useState('');
-
     const [createActive, setCreateActive] = useState(false);
     const [modalOpen, setModalOpen] = useState(true);
 
-    // useEffect(() => {
-    //     if (localStorage.getItem('token')) {
-    //         setSessionToken(localStorage.getItem('token'));
-    //     }
-    // }, [])
+    useEffect(() => {
+        if (localStorage.getItem('token')) {
+            setSessionToken(localStorage.getItem('token'));
+        }
+    }, [])
+
 
     // const updateToken = (newToken) => {
     //     localStorage.setItem('token', newToken);
@@ -40,11 +40,11 @@ const CharacterIndex = (props) => {
     }
 
     const fetchCharacters = () => {
-        fetch('http://localhost:3000/characters/mine', {
+        fetch('http://localhost:3000/character/mine', {
             method: 'GET',
             headers: new Headers({
                 'Content-Type': 'application/json',
-                'Authorization': props.token
+                'Authorization': `Bearer ${props.token}`  
             })
         }).then((res) => res.json())
             .then((logData) => {
@@ -52,6 +52,9 @@ const CharacterIndex = (props) => {
                 console.log(logData)
             })
     }
+    useEffect(() => {
+        fetchCharacters();
+    }, [])
 
     return (
         <div className='index'>
@@ -60,10 +63,11 @@ const CharacterIndex = (props) => {
             </div>
             <div className='layout'>
                 <nav>
-                    <Sidebar clickLogout={clearToken} />
+                    <Sidebar clickLogout={clearToken} token={props.token} />
                 </nav>
                 <div className='content'>
                     <h1>something to see</h1>
+
                     <div class="d-grid gap-2 col-6 mx-auto">
                         <button class="btn btn-primary" type="button" onClick={toggleCreateOn}>
                             Create a Character
@@ -73,8 +77,10 @@ const CharacterIndex = (props) => {
                             {/* <CharacterCreator /> */}
                         </div>
                         <br />
-                    <ViewCharacter />
-                    {/* <CharacterCarousel /> */}
+                        <ViewCharacter characters={characters} fetchCharacters={fetchCharacters} token={props.token} />
+                        <CharacterCarousel characters={characters} fetchCharacters={fetchCharacters} token={props.token}/>
+
+
                 </div>
             </div>
             <div className='footer'>

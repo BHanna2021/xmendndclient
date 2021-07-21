@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import AuthLogin from './components/auth/AuthLogin';
-import AuthCreate from './components/auth/AuthCreate';
-import { Switch, Route, Link } from "react-router-dom";
+import Auth from './components/auth/Auth';
 import './App.css';
 import CharacterIndex from './components/character/CharacterIndex';
 
@@ -27,34 +25,14 @@ function App() {
 
   const protectedViews = () => {
     return (
-      sessionToken === localStorage.getItem('token') ? <CharacterIndex token={sessionToken} /> : <AuthLogin updateToken={updateToken} />
+      sessionToken === localStorage.getItem('token') ? <CharacterIndex token={sessionToken} /> : <Auth updateToken={updateToken} />
     )
   }
 
   return (
-      <div className="App" >
-        <ul>
-          <li >
-            <Link to="/" />
-          </li>
-          <li>
-            <Link to="/SignUp" />
-          </li>
-          <li>
-            {protectedViews()}
-          </li>
-        </ul>
-        
-
-      <Switch>
-        <Route path="/Login">
-          <AuthLogin />
-        </Route>
-        <Route path="/SignUp">
-          <AuthCreate />
-        </Route>
-      </Switch>
-      </div>
+    <div>
+      {protectedViews()}
+    </div>
   );
 }
 

@@ -28,7 +28,6 @@ const CharacterCreator = (props) => {
     const [level, setLevel] = useState('');
     const [experience, setExperience] = useState('');
     const [modalOpen, setModalOpen] = useState(true);
-    const [activeButton, setActiveButton] = useState(false);
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -65,17 +64,14 @@ const CharacterCreator = (props) => {
             setBackground('');
             setLevel('');
             setExperience('');
-            
+            setModalOpen(false);
+            window.location="/"
         })
     }
 
     const closeModal = () => {
         setModalOpen(false)
         props.toggleCreateOff()
-    }
-
-    const selectAlign = () => {
-        setActiveButton(true)
     }
 
     return(
@@ -313,22 +309,22 @@ const CharacterCreator = (props) => {
                     <br/>
                 </Row>
                 <Row>
-                    <Col md={12}>
-                    <Label for="name">Character Name: </Label>
-                    <Input type="text"  name="name" value={name} onChange={(e) => setName(e.target.value)}/>
-                    </Col>
-                </Row>
-                <Row>
-                    <br/>
-                </Row>
-                <Row>
-                    <Col md={6}>
+                <Col md={6}>
                         <Label for="level">Level: </Label>
                         <Input type="number" name="level" value={level} onChange={(e) => setLevel(e.target.value)}/>
                     </Col>
                     <Col md={6}>
                         <Label for="experience">Experience: </Label>
                         <Input type="text" name="experience" value={experience} onChange={(e) => setExperience(e.target.value)}/>
+                    </Col>
+                </Row>
+                <Row>
+                    <br/>
+                </Row>
+                <Row>
+                <Col md={12}>
+                    <Label for="name">Character Name: </Label>
+                    <Input type="text"  name="name" value={name} onChange={(e) => setName(e.target.value)}/>
                     </Col>
                 </Row>
                 <Row>

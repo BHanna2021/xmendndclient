@@ -13,7 +13,9 @@ const CharacterTable = (props) => {
                     <td>{character.char_class}</td>
                     <td>{character.race}</td>
                     <td>
-                        <Button color="warning" onClick={() => {props.displayCharacter(character)}}>View Character</Button>
+
+                        <Button color="warning" size="sm" onClick={() => {props.displayCharacter(character)}}>View Character</Button>
+
                     </td>
                 </tr>
             )
@@ -24,7 +26,7 @@ const CharacterTable = (props) => {
         <>
         <h3>Characters</h3>
         <hr />
-        <Table size="sm" dark scope='row' id="table">
+        <Table size="sm"  scope='row' id="table">
             <thead id="firstcol">
                 <tr>
                     <th># |</th>

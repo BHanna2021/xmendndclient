@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { } from 'reactstrap';
 import { Link, Route, Switch } from 'react-router-dom';
 import Sidebar from '../../sites/Sidebar';
-// import CharacterCreator from './CreateCharacter';
+import CharacterCreator from './CreateCharacter';
 import CharacterCarousel from './CharacterCarousel';
 import ViewCharacter from './ViewCharacter';
 
@@ -11,7 +11,6 @@ const CharacterIndex = (props) => {
 
     const [sessionToken, setSessionToken] = useState('');
     const [createActive, setCreateActive] = useState(false);
-    const [modalOpen, setModalOpen] = useState(true);
 
     useEffect(() => {
         if (localStorage.getItem('token')) {
@@ -29,6 +28,7 @@ const CharacterIndex = (props) => {
     const clearToken = () => {
         localStorage.clear();
         setSessionToken('');
+        window.location="/"
     }
 
     const toggleCreateOn = () => {
@@ -73,14 +73,10 @@ const CharacterIndex = (props) => {
                             Create a Character
                             </button>
                             {createActive ? <CharacterCreator toggleCreateOff={toggleCreateOff} token={props.token} /> : <></>}
-                                
-                            {/* <CharacterCreator /> */}
-                        </div>
-                        <br />
-                        <ViewCharacter characters={characters} fetchCharacters={fetchCharacters} token={props.token} />
-                        <CharacterCarousel characters={characters} fetchCharacters={fetchCharacters} token={props.token}/>
-
-
+                    </div>
+                    <br />
+                    <ViewCharacter characters={characters} fetchCharacters={fetchCharacters} token={props.token} />
+                    <CharacterCarousel characters={characters} fetchCharacters={fetchCharacters} token={props.token}/>
                 </div>
             </div>
             <div className='footer'>

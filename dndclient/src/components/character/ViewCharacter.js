@@ -2,11 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { Button, CardImg } from 'reactstrap';
 
 const ViewCharacter = (props) => {
-    const [characterToView, setCharacterToView] = useState(props.characterToView)
+    console.log(props);
 
-    useEffect(() => {
-        console.log(characterToView)
-    }, [])
 
     const deleteCharacter = (characters) => {
         fetch(`http://localhost:3000/character/${characters.id}`, {
@@ -18,67 +15,10 @@ const ViewCharacter = (props) => {
         }).then(() => props.fetchCharacters())
     }
 
-    const cardMapper = () => {
-        return props.characters.map((character, index) => {
-            console.log(character.id);
-            return(
-                <div id="results">
-                <td key={index}>
-                    <tbody>
-                    <tr>
-                    <th scope="row">{character.name}</th>
-                    </tr>
-                    <tr>
-                    <td>{character.gender}</td>
-                    </tr>
-                    <tr>
-                    <td>{character.height_ft}</td>
-                    </tr>
-                    <tr>
-                    <td>{character.height_in}</td>
-                    </tr>
-                    <tr>
-                    <td>{character.weight}</td>
-                    </tr>
-                    <tr>
-                    <td>{character.race}</td>
-                    </tr>
-                    <tr>
-                    <td>{character.char_class}</td>
-                    </tr>
-                    <tr>
-                    <td>{character.alignment}</td>
-                    </tr>
-                    <tr>
-                    <td>{character.background}</td>
-                    </tr>
-                    <tr>
-                    <td>{character.level}</td>
-                    </tr>
-                    <tr>
-                    <td>{character.experience}</td>
-                    </tr>
-                    </tbody>
-                    <tr>
-                    <td>
-                        {/* <Button color="warning" onClick={() => {props.editUpdateCharacter(character); props.updateOn()}}>Update</Button>
-                        <Button color="danger" onClick={() => {deleteCharacter(character)}}>Delete</Button> */}
-                    </td>
-                    </tr>
-                    </td>
-                    <br/>
-                    <div id="buttons">
-                    <Button color="warning" onClick={() => {props.editUpdateCharacter(character); props.updateOn()}}>Update</Button>
-                    <Button color="danger" onClick={() => {deleteCharacter(character)}}>Delete</Button>
-                    </div>
-                </div>
-            )
-        })
-    }    
+    
 
     return (
         <div className='character_view'>
-            <p>{props.characterToView}</p>
             <div id="featurecard" class="card text-center col-md-6 offset-md-3">
                 <CardImg top width="100%" src="image1.jpg" alt=" "/>
                 <div class="card-header">
@@ -91,49 +31,46 @@ const ViewCharacter = (props) => {
                         <table scope="col" id="table2">
                             <div id='col1'>
                                 <tr>
-                                    <th>Name: { characterToView ? characterToView.name : "test"}    </th>
+                                    <th>Name:{props.characterToView.name}</th>
                                 </tr>
                                 <tr>
-                                    <th>Gender:</th>
+                                    <th>Gender:{props.characterToView.gender}</th>
                                 </tr>
                                 <tr>
-                                    <th>Height-ft:</th>
+                                    <th>Height-ft:{props.characterToView.height_ft}</th>
                                 </tr>
                                 <tr>
-                                    <th>Height-inches:</th>
+                                    <th>Height-inches:{props.characterToView.height_in}</th>
                                 </tr>
                                 <tr>
-                                    <th>Weight:</th>
+                                    <th>Weight:{props.characterToView.weight}</th>
                                 </tr>
 
                                 <tr>
-                                    <th>Race:</th>
+                                    <th>Race:{props.characterToView.race}</th>
                                 </tr>
                                 <tr>
-                                    <th>Class:</th>
+                                    <th>Class:{props.characterToView.char_class}</th>
                                 </tr>
                                 <tr>
-                                    <th>Alignment:</th>
+                                    <th>Alignment:{props.characterToView.alignment}</th>
                                 </tr>
                                 <tr>
-                                    <th>Background:</th>
+                                    <th>Background:{props.characterToView.background}</th>
                                 </tr>
                                 <tr>
-                                    <th>Level:</th>
+                                    <th>Level:{props.characterToView.level}</th>
                                 </tr>
                                 <tr>
-                                    <th>Experience:</th>
+                                    <th>Experience:{props.characterToView.experience}</th>
                                 </tr>
                             </div>
-                            <tbody id="col2">
-                                {/* {cardMapper()} */}
-                            </tbody>
                         </table>
                     </div>
                     <br />
                     <div class="d-grid gap-2 col-6 mx-auto">
-                        {/* <button class="btn btn-primary" type="button" onClick={() => {props.editUpdateCharacter(character); props.updateOn()}}>Update</button>
-                        <button class="btn btn-primary" type="button" onClick={() => {deleteCharacter(character)}}>Delete</button> */}
+                        <button class="btn btn-primary" type="button" onClick={() => {}}>Update</button>
+                        <button class="btn btn-primary" type="button" onClick={() => {}}>Delete</button>
                     </div>
                     {/* <a href="#" class="btn btn-primary">Go somewhere</a> */}
                 </div>

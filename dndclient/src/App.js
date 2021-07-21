@@ -18,6 +18,10 @@ function App() {
     console.log(sessionToken);
   }
 
+  const clearToken = () => {
+    localStorage.clear();
+    setSessionToken('');
+  }
 
   const protectedViews = () => {
     return (
@@ -29,6 +33,7 @@ function App() {
     <div>
       {protectedViews()}
     </div>
+
   );
 }
 

@@ -29,6 +29,7 @@ const CharacterIndex = (props) => {
     const clearToken = () => {
         localStorage.clear();
         setSessionToken('');
+        window.location("/")
     }
 
     const toggleCreateOn = () => {
@@ -77,7 +78,7 @@ const CharacterIndex = (props) => {
                             {/* <CharacterCreator /> */}
                         </div>
                         <br />
-                        <ViewCharacter characters={characters} fetchCharacters={fetchCharacters} token={props.token} />
+                        {/* <ViewCharacter characters={characters} fetchCharacters={fetchCharacters} token={props.token} /> */}
                         <CharacterCarousel characters={characters} fetchCharacters={fetchCharacters} token={props.token}/>
 
 

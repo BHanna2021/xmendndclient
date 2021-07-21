@@ -60,7 +60,7 @@ const Sidebar = (props) => {
                     <h6>member since:</h6>
                 </ul>
                 <Nav className="ml-auto" navbar>
-                    <NavItem>
+                    <NavItem id="button">
                         <Button onClick={props.clickLogout}>Logout</Button>
                     </NavItem>
                 </Nav>

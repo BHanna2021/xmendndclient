@@ -77,8 +77,6 @@ const CharacterIndex = (props) => {
                     <br />
                     <ViewCharacter characters={characters} fetchCharacters={fetchCharacters} token={props.token} />
                     <CharacterCarousel characters={characters} fetchCharacters={fetchCharacters} token={props.token}/>
-
-
                 </div>
             </div>
             <div className='footer'>

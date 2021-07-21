@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Button } from 'reactstrap';
+import { Button, CardImg } from 'reactstrap';
 
 const ViewCharacter = (props) => {
     const [characterToView, setCharacterToView] = useState(props.characterToView)
@@ -80,6 +80,7 @@ const ViewCharacter = (props) => {
         <div className='character_view'>
             <p>{props.characterToView}</p>
             <div id="featurecard" class="card text-center col-md-6 offset-md-3">
+                <CardImg top width="100%" src="image1.jpg" alt=" "/>
                 <div class="card-header">
                     Featured
                 </div>

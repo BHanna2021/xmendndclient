@@ -8,6 +8,7 @@ import ViewCharacter from './ViewCharacter';
 
 const CharacterIndex = (props) => {
     const [characters, setCharacters] = useState([]);
+    const [characterToView, setCharacterToView] = useState({});
 
     const [sessionToken, setSessionToken] = useState('');
     const [createActive, setCreateActive] = useState(false);
@@ -28,7 +29,7 @@ const CharacterIndex = (props) => {
     const clearToken = () => {
         localStorage.clear();
         setSessionToken('');
-        window.location="/"
+        window.location = "/"
     }
 
     const toggleCreateOn = () => {
@@ -44,7 +45,7 @@ const CharacterIndex = (props) => {
             method: 'GET',
             headers: new Headers({
                 'Content-Type': 'application/json',
-                'Authorization': `Bearer ${props.token}`  
+                'Authorization': `Bearer ${props.token}`
             })
         }).then((res) => res.json())
             .then((logData) => {
@@ -63,7 +64,7 @@ const CharacterIndex = (props) => {
             </div>
             <div className='layout'>
                 <nav>
-                    <Sidebar clickLogout={clearToken} token={props.token} characters={characters} />
+                    <Sidebar clickLogout={clearToken} token={props.token} setCharacterToView={setCharacterToView} characters={characters} />
                 </nav>
                 <div className='content'>
                     <h1>something to see</h1>
@@ -71,12 +72,12 @@ const CharacterIndex = (props) => {
                     <div class="d-grid gap-2 col-6 mx-auto">
                         <button class="btn btn-primary" type="button" onClick={toggleCreateOn}>
                             Create a Character
-                            </button>
-                            {createActive ? <CharacterCreator toggleCreateOff={toggleCreateOff} token={props.token} /> : <></>}
+                        </button>
+                        {createActive ? <CharacterCreator toggleCreateOff={toggleCreateOff} token={props.token} /> : <></>}
                     </div>
                     <br />
-                    <ViewCharacter characters={characters} fetchCharacters={fetchCharacters} token={props.token} />
-                    <CharacterCarousel characters={characters} fetchCharacters={fetchCharacters} token={props.token}/>
+                    <ViewCharacter characters={characters} characterToView={characterToView} fetchCharacters={fetchCharacters} token={props.token} />
+                    <CharacterCarousel characters={characters} fetchCharacters={fetchCharacters} token={props.token} />
                 </div>
             </div>
             <div className='footer'>

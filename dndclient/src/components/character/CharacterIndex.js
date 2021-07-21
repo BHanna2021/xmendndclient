@@ -62,7 +62,7 @@ const CharacterIndex = (props) => {
             <div className='header'>
                 <h1>Really Need A Name</h1>
             </div>
-            <div className='layout'>
+            <div className='layout' >
                 <nav>
                     <Sidebar clickLogout={clearToken} token={props.token} setCharacterToView={setCharacterToView} characters={characters} />
                 </nav>
@@ -70,7 +70,7 @@ const CharacterIndex = (props) => {
                     <h1>something to see</h1>
 
                     <div class="d-grid gap-2 col-6 mx-auto">
-                        <button class="btn btn-primary" type="button" onClick={toggleCreateOn}>
+                        <button class="btn btn-secondary btn-block" type="button" onClick={toggleCreateOn}>
                             Create a Character
                         </button>
                         {createActive ? <CharacterCreator toggleCreateOff={toggleCreateOff} token={props.token} /> : <></>}

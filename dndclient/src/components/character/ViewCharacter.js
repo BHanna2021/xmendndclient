@@ -5,8 +5,8 @@ const ViewCharacter = (props) => {
     console.log(props);
 
 
-    const deleteCharacter = (characters) => {
-        fetch(`http://localhost:3000/character/${characters.id}`, {
+    const deleteCharacter = (characterToView) => {
+        fetch(`http://localhost:3000/character/delete/${props.characterToView.id}`, {
             method: 'DELETE',
             headers: new Headers({
                 'Content-Type': 'application/json',
@@ -70,7 +70,7 @@ const ViewCharacter = (props) => {
                                 </tr>
                                 <hr/>
                                 <div class="d-grid gap-2 col-8 mx-auto">
-                                    <button class="btn btn-secondary btn-block" type="button" onClick={() => { }}>Delete</button>
+                                    <button class="btn btn-secondary btn-block" type="button" onClick={() => {deleteCharacter(props.characterToView)}}>Delete</button>
                                 </div>
                             </div>
                             <tr>

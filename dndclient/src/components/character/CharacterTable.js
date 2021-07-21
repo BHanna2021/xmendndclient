@@ -14,7 +14,7 @@ const CharacterTable = (props) => {
                     <td>{character.race}</td>
                     <td>
 
-                        <Button id="viewbutton" class="btn btn-link" onClick={() => {props.displayCharacter(character)}}>View Character</Button>
+                        <Button id="viewbutton" class="btn btn-link" onClick={() => {props.displayCharacter(character)}}>View</Button>
 
                     </td>
                 </tr>

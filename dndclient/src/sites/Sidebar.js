@@ -6,7 +6,6 @@ import ViewCharacter from '../components/character/ViewCharacter';
 const Sidebar = (props) => {
     const [characters, setCharacters] = useState([]);
     const [updateActive, setUpdateActive] = useState(false);
-    const [characterToView, setCharacterToView] = useState({});
 
     const fetchCharacters = () => {
         fetch(`http://localhost:3000/character/mine`, {
@@ -32,8 +31,8 @@ const Sidebar = (props) => {
             })
         }).then( (res) => res.json())
         .then((logData) => {
-            setCharacterToView(logData)
-            console.log(characterToView.id)
+            props.setCharacterToView(logData)
+
         })
         // setCharacterToView(character);
     }
@@ -70,7 +69,7 @@ const Sidebar = (props) => {
 
                         <CharacterTable characters={characters} displayCharacter={displayCharacter} fetchCharacters={fetchCharacters} token={props.token} />
                         {/* <ViewCharacter characters={characters} displayCharacter={displayCharacter} fetchCharacters={fetchCharacters} token={props.token} /> */}
-                    {updateActive ? <ViewCharacter characterToView={characterToView} setCharacterToView={setCharacterToView} updateOff={updateOff} token={props.token} updateOn={updateOn} fetchCharacters={fetchCharacters} /> : <></>}
+                    {updateActive ? <ViewCharacter characterToView={props.characterToView} setCharactersToView={props.setCharacterToView} updateOff={updateOff} token={props.token} updateOn={updateOn} fetchCharacters={fetchCharacters} /> : <></>}
 
             </Container>
         </div>

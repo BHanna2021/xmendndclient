@@ -60,20 +60,17 @@ const Sidebar = (props) => {
                     <h6>member since:</h6>
                 </ul>
                 <Nav className="ml-auto" navbar>
-                    <NavItem>
+                    <NavItem id="button">
                         <Button onClick={props.clickLogout}>Logout</Button>
                     </NavItem>
                 </Nav>
                 <br/>
             </div>
             <Container>
-                <Row>
-                    <Col md="3">
+
                         <CharacterTable characters={characters} displayCharacter={displayCharacter} fetchCharacters={fetchCharacters} token={props.token} />
                         {/* <ViewCharacter characters={characters} displayCharacter={displayCharacter} fetchCharacters={fetchCharacters} token={props.token} /> */}
-                    </Col>
                     {updateActive ? <ViewCharacter characterToView={characterToView} setCharacterToView={setCharacterToView} updateOff={updateOff} token={props.token} updateOn={updateOn} fetchCharacters={fetchCharacters} /> : <></>}
-                </Row>
             </Container>
         </div>
     );

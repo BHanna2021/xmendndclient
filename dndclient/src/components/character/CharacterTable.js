@@ -13,7 +13,9 @@ const CharacterTable = (props) => {
                     <td>{character.char_class}</td>
                     <td>{character.race}</td>
                     <td>
+
                         <Button color="warning" size="sm" onClick={() => {props.displayCharacter(character)}}>View Character</Button>
+
                     </td>
                 </tr>
             )

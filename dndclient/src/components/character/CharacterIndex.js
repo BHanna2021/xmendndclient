@@ -11,7 +11,6 @@ const CharacterIndex = (props) => {
 
     const [sessionToken, setSessionToken] = useState('');
     const [createActive, setCreateActive] = useState(false);
-    const [modalOpen, setModalOpen] = useState(true);
 
     useEffect(() => {
         if (localStorage.getItem('token')) {
@@ -29,7 +28,7 @@ const CharacterIndex = (props) => {
     const clearToken = () => {
         localStorage.clear();
         setSessionToken('');
-        window.location("/")
+        window.location="/"
     }
 
     const toggleCreateOn = () => {
@@ -74,14 +73,10 @@ const CharacterIndex = (props) => {
                             Create a Character
                             </button>
                             {createActive ? <CharacterCreator toggleCreateOff={toggleCreateOff} token={props.token} /> : <></>}
-                                
-                            {/* <CharacterCreator /> */}
-                        </div>
-                        <br />
-                        {/* <ViewCharacter characters={characters} fetchCharacters={fetchCharacters} token={props.token} /> */}
-                        <CharacterCarousel characters={characters} fetchCharacters={fetchCharacters} token={props.token}/>
-
-
+                    </div>
+                    <br />
+                    <ViewCharacter characters={characters} fetchCharacters={fetchCharacters} token={props.token} />
+                    <CharacterCarousel characters={characters} fetchCharacters={fetchCharacters} token={props.token}/>
                 </div>
             </div>
             <div className='footer'>

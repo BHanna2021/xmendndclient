@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import Auth from './components/auth/Auth';
 import './App.css';
 import CharacterIndex from './components/character/CharacterIndex';
+import background from '../src/SwampHagsHutsPublic.jpg';
+
 
 function App() {
   const [sessionToken, setSessionToken] = useState('');
@@ -30,7 +32,7 @@ function App() {
   }
 
   return (
-    <div>
+    <div style={{ backgroundImage: `url(${background})})`}}>
       {protectedViews()}
     </div>
   );

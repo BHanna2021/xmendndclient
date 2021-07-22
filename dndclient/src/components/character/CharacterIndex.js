@@ -5,6 +5,7 @@ import Sidebar from '../../sites/Sidebar';
 import CharacterCreator from './CreateCharacter';
 import CharacterCarousel from './CharacterCarousel';
 import ViewCharacter from './ViewCharacter';
+import ScrollingBanner from '../../sites/Header';
 
 const CharacterIndex = (props) => {
     const [characters, setCharacters] = useState([]);
@@ -59,8 +60,8 @@ const CharacterIndex = (props) => {
 
     return (
         <div className='index'>
-            <div className='header'>
-                <h1>Really Need A Name</h1>
+            <div>
+                <ScrollingBanner />
             </div>
             <div className='layout'>
                 <nav>

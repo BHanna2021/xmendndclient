@@ -15,23 +15,24 @@ import {Button,
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 const EditCharacter = (props) => {
-    const [editName, setEditName] = useState(props.charToUpdate.name);
-    const [editRace, setEditRace] = useState(props.charToUpdate.race);
-    const [editAlignment, setEditAlignment] = useState(props.charToUpdate.alignment);
-    const [editGender, setEditGender] = useState(props.charToUpdate.gender);
-    const [editHeight_ft, setEditHeight_ft] = useState(props.charToUpdate.height_ft);
-    const [editHeight_in, setEditHeight_in] = useState(props.charToUpdate.height_in);
-    const [editWeight, setEditWeight] = useState(props.charToUpdate.weight);
-    const [editChar_class, setEditChar_class] = useState(props.charToUpdate.char_class);
-    const [editBackground, setEditBackground] = useState(props.charToUpdate.background);
-    const [editLevel, setEditLevel] = useState(props.charToUpdate.level);
-    const [editExperience, setEditExperience] = useState(props.charToUpdate.experience);
+    console.log(props)
+    const [editName, setEditName] = useState(props.characterToView.name);
+    const [editRace, setEditRace] = useState(props.characterToView.race);
+    const [editAlignment, setEditAlignment] = useState(props.characterToView.alignment);
+    const [editGender, setEditGender] = useState(props.characterToView.gender);
+    const [editHeight_ft, setEditHeight_ft] = useState(props.characterToView.height_ft);
+    const [editHeight_in, setEditHeight_in] = useState(props.characterToView.height_in);
+    const [editWeight, setEditWeight] = useState(props.characterToView.weight);
+    const [editChar_class, setEditChar_class] = useState(props.characterToView.char_class);
+    const [editBackground, setEditBackground] = useState(props.characterToView.background);
+    const [editLevel, setEditLevel] = useState(props.characterToView.level);
+    const [editExperience, setEditExperience] = useState(props.characterToView.experience);
     const [editModalOpen, setEditModalOpen] = useState(true);
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        fetch(`http://localhost:3000/character/update${props.charToUpdate.id}`, {
-            method: 'POST',
+        fetch(`http://localhost:3000/character/update/${props.characterToView.id}`, {
+            method: 'PUT',
             body: JSON.stringify({Character: {
                 name: editName,
                 race: editRace,
@@ -49,15 +50,17 @@ const EditCharacter = (props) => {
                 'Content-Type': 'application/json',
                 'Authorization': `Bearer ${props.token}`
             })
-        }).then((res) => res.json())
-        .then((charData) => {
-            console.log(charData);
+        }).then((res) => {
+            setEditModalOpen(false)
+            props.editOff()
+            window.location='/'
         })
+            
     }
 
     const closeModal = () => {
         setEditModalOpen(false)
-        props.toggleCreateOff()
+        props.editOff()
     }
 
     return(
@@ -320,7 +323,7 @@ const EditCharacter = (props) => {
                     <Col md={2}>
                     </Col>
                     <Col md={3}>
-                        <Button type="submit">Create!</Button>
+                        <Button type="submit">Update</Button>
                     </Col>
                     <Col md={2}>
                     </Col>

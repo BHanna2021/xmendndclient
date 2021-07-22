@@ -1,8 +1,0 @@
-{
-  "dependencies": {
-    "bootstrap": "^5.0.2",
-    "dotenv": "^10.0.0",
-    "react-router-dom": "^5.2.0",
-    "reactstrap": "^8.9.0"
-  }
-}

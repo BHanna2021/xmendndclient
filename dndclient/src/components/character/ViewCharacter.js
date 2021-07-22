@@ -1,8 +1,18 @@
 import React, { useState, useEffect } from 'react';
 import { Button, CardImg } from 'reactstrap';
+import EditCharacter from './CharacterEdit';
 
 const ViewCharacter = (props) => {
     console.log(props);
+    const [editActive, setEditActive] = useState(false);
+
+    const editOn = () => {
+        setEditActive(true)
+    }
+
+    const editOff = () => {
+        setEditActive(false)
+    }
 
 
     const deleteCharacter = (characterToView) => {
@@ -49,7 +59,8 @@ const ViewCharacter = (props) => {
 
                                 <hr/>
                                 <div class="d-grid gap-2 col-8 mx-auto">
-                                    <button class="btn btn-secondary btn-block" type="button" onClick={() => { }}>Update</button>
+                                    <button class="btn btn-secondary btn-block" type="button" onClick={editOn}>Update</button>
+                                    {editActive ? <EditCharacter characterToView={props.characterToView} editOff={editOff} token={props.token} /> : <></>}
                                 </div>
                             </div>
                             <div id='col2'>

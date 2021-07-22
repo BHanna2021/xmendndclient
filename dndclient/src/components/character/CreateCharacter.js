@@ -51,8 +51,7 @@ const CharacterCreator = (props) => {
                 'Authorization': `Bearer ${props.token}`
             })
         }).then((res) => res.json())
-        .then((charData) => {
-            console.log(charData);
+        .then((charData) => {console.log(charData);
             setName('');
             setRace('');
             setAlignment('');

@@ -20,7 +20,7 @@ const CreateUser = (props) => {
 
     let handleSubmit = (event) => {
         event.preventDefault();
-        fetch(`${APIURL}/register`, {
+        fetch(`${APIURL}/user/register`, {
 
             method: "POST",
             body: JSON.stringify({

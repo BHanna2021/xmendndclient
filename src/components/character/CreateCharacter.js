@@ -14,6 +14,7 @@ import {Button,
         ModalFooter
     } from 'reactstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import APIURL from '../../helpers/environment';
 
 const CharacterCreator = (props) => {
     const [name, setName] = useState('');
@@ -31,7 +32,7 @@ const CharacterCreator = (props) => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        fetch('http://localhost:3000/character/create', {
+        fetch(`${APIURL}/character/create`, {
             method: 'POST',
             body: JSON.stringify({Character: {
                 name: name,

@@ -13,6 +13,7 @@ import {Button,
         ModalBody
     } from 'reactstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import APIURL from '../../helpers/environment';
 
 const EditCharacter = (props) => {
     console.log(props)
@@ -31,7 +32,7 @@ const EditCharacter = (props) => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        fetch(`http://localhost:3000/character/update/${props.characterToView.id}`, {
+        fetch(`${APIURL}/character/update/${props.characterToView.id}`, {
             method: 'PUT',
             body: JSON.stringify({Character: {
                 name: editName,

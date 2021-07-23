@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Button, CardImg } from 'reactstrap';
 import EditCharacter from './CharacterEdit';
+import APIURL from '../../helpers/environment';
 
 const ViewCharacter = (props) => {
     console.log(props);
@@ -16,7 +17,7 @@ const ViewCharacter = (props) => {
 
 
     const deleteCharacter = (characterToView) => {
-        fetch(`http://localhost:3000/character/delete/${props.characterToView.id}`, {
+        fetch(`${APIURL}/character/delete/${props.characterToView.id}`, {
             method: 'DELETE',
             headers: new Headers({
                 'Content-Type': 'application/json',

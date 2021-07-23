@@ -8,20 +8,19 @@ import {
     Modal,
     ModalHeader,
     ModalBody,
-    ModalFooter
 } from "reactstrap";
 import 'bootstrap/dist/css/bootstrap.min.css';
+import APIURL from '../../helpers/environment';
 
 const CreateUser = (props) => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [handle, setHandle] = useState("");
     const [modalOpen, setModalOpen] = useState(true);
-    const [activeButton, setActiveButton] = useState(false);
 
     let handleSubmit = (event) => {
         event.preventDefault();
-        fetch("http://localhost:3000/user/register", {
+        fetch(`${APIURL}/register`, {
 
             method: "POST",
             body: JSON.stringify({

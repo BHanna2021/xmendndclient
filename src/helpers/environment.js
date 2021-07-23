@@ -5,7 +5,7 @@ switch (window.location.hostname) {
         APIURL = 'http://localhost:3000';
         break;
     case 'aw-bh-jz-dndcreatorclient.herokuapp.com':
-        APIURL = 'https://aw-bh-jz-dndcreator.herokuapp.com'
+        APIURL = 'https://efa-cors-anywhere.herokuapp.com/https://aw-bh-jz-dndcreator.herokuapp.com'
 }
 
 export default APIURL;

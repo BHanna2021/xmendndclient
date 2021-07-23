@@ -9,7 +9,7 @@ switch (window.location.hostname) {
         // this is the deployed react application
     case 'aw-bh-jz-dndcreator.herokuapp.com':
         // this is the full url of your deployed API
-        APIURL = 'https://aw-bh-jz-dndcreator.herokuapp.com/'
+        APIURL = 'https://aw-bh-jz-dndcreator.herokuapp.com'
 }
 
 export default APIURL;

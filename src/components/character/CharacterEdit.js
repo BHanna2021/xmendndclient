@@ -188,7 +188,7 @@ const EditCharacter = (props) => {
                     <Col md={3}>
                         <FormGroup>
                             <Label check>
-                                <Input type="radio" name="gender" value="Female" onChange={(e) => setEditGender(e.target.value)} />
+                                <Input checked={props.characterToView.gender==="Female"} type="radio" name="gender" value="Female" onChange={(e) => setEditGender(e.target.value)} />
                                 &nbsp;Female
                             </Label>
                         </FormGroup>
@@ -196,7 +196,7 @@ const EditCharacter = (props) => {
                     <Col md={4}>
                         <FormGroup>
                             <Label check>
-                                <Input type="radio" name="gender" value="Non-Binary" onChange={(e) => setEditGender(e.target.value)} />
+                                <Input checked={props.characterToView.gender==="Non-Binary"} type="radio" name="gender" value="Non-Binary" onChange={(e) => setEditGender(e.target.value)} />
                                 &nbsp;Non-Binary
                             </Label>
                         </FormGroup>
@@ -204,7 +204,7 @@ const EditCharacter = (props) => {
                     <Col md={3}>
                         <FormGroup>
                             <Label check>
-                                <Input type="radio" name="gender" value="Male" onChange={(e) => setEditGender(e.target.value)} />
+                                <Input checked={props.characterToView.gender==="Male"} type="radio" name="gender" value="Male" onChange={(e) => setEditGender(e.target.value)} />
                                 &nbsp;Male
                             </Label>
                         </FormGroup>
@@ -215,7 +215,9 @@ const EditCharacter = (props) => {
                 </Row>
                 <Row>
                     <Col md={12} className="text-center">
-                        <Label htmlFor="alignment" value={editAlignment}>Alignment:</Label>
+                        <Label> Current Alignment: {props.characterToView.alignment}</Label>
+                        <br/>
+                        <Label htmlFor="alignment" value={editAlignment}>New Alignment: {editAlignment}</Label>
                     </Col>
                 </Row>
                 <Row>

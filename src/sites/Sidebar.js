@@ -2,13 +2,14 @@ import React, { useState, useEffect } from 'react';
 import { Container, Row, Col, Button, Nav, NavItem } from 'reactstrap';
 import CharacterTable from '../components/character/CharacterTable';
 import ViewCharacter from '../components/character/ViewCharacter';
+import APIURL from '../helpers/environment';
 
 const Sidebar = (props) => {
     const [characters, setCharacters] = useState([]);
     const [updateActive, setUpdateActive] = useState(false);
 
     const fetchCharacters = () => {
-        fetch(`http://localhost:3000/character/mine`, {
+        fetch(`${APIURL}/character/mine`, {
             method: 'GET',
             headers: new Headers ({
                 'Content-Type': 'application/json',
@@ -23,7 +24,7 @@ const Sidebar = (props) => {
 
     const displayCharacter = (character) => {
         console.log(character.id)
-        fetch(`http://localhost:3000/character/${character.id}`, {
+        fetch(`${APIURL}/character/${character.id}`, {
             method: 'GET',
             headers: new Headers ({
                 'Content-Type': 'application/json',

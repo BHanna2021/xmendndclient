@@ -6,6 +6,7 @@ import APIURL from '../../helpers/environment';
 const LoginUser = (props) => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    const [handle, setHandle] = useState("");
 
     let handleSubmit = (event) => {
         event.preventDefault();
@@ -35,6 +36,7 @@ const LoginUser = (props) => {
                 </div>
                 <div>
                     <h3>Login Here</h3>
+                    <br/>
                     <Form onSubmit={handleSubmit}>
                         <FormGroup>
                             <Label htmlFor="email">Email Address</Label>
@@ -45,15 +47,18 @@ const LoginUser = (props) => {
                                 required
                             />
                         </FormGroup>
+                        <br/>
                         <FormGroup>
                             <Label htmlFor="password">Password</Label>
                             <Input
                                 onChange={(e) => setPassword(e.target.value)}
                                 name="password"
                                 value={password}
+                                type="password"
                                 required
                             />
                         </FormGroup>
+                        <br/>
                         <Button type="submit">Login</Button>
                     </Form>
                 </div>

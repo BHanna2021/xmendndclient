@@ -1,15 +1,40 @@
 * { 
   box-sizing: border-box;
+  font-family: 'Pirata One', cursive;
+  letter-spacing: .5px;
+}
+
+* h1{
+  font-size: 415%;
+}
+
+* h2{
+  font-size: 150%;
+}
+
+* h3 {
+  font-size: 100%;
+}
+
+* button{
+  font-size: 100%;
+}
+
+* Label {
+  font-size: 120%;
+}
+
+* p {
+  font-size: 110%;
 }
 
 .auth-container{
   margin: 5% 25%;
-  border: red 2px solid;
+  padding-bottom: 5%;
 }
 
 .signUp {
-  padding: 5%;
-  border: red 2px solid;
+  margin: -52% -135% 52% 135%;
 }
 
 .index {
@@ -250,11 +275,10 @@ h3 {
   height: 130px;
   padding: 10px;
 }
-<<<<<<< HEAD:dndclient/src/App.css
 .PhotoBanner {
   height: 100px;
   width: 3550px;
-=======
+}
 
 /* keyframe animations
 .FirstPhoto {
@@ -283,7 +307,6 @@ h3 {
     margin-left: -2125px;
   }
   
->>>>>>> d1597529c1c7337ab05390d40ff45dee8a1adee2:src/App.css
 }
 
 /* logo-slider {
@@ -331,12 +354,9 @@ h3 {
 	}
 
 }
-<<<<<<< HEAD:dndclient/src/App.css
 
 @keyframes marquee {
 	0%   { transform: translateX(0%); }
 	100% { transform: translateX(-100%); }
-=======
   
->>>>>>> d1597529c1c7337ab05390d40ff45dee8a1adee2:src/App.css
 } */

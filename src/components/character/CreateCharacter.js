@@ -225,7 +225,7 @@ const CharacterCreator = (props) => {
                 </Row>
                 <Row>
                     <Col md={12} className="text-center">
-                        <Label htmlFor="alignment" value={alignment}>Alignment:</Label>
+                        <Label htmlFor="alignment" value={alignment}>Alignment: {alignment}</Label>
                     </Col>
                 </Row>
                 <Row>

@@ -5,11 +5,8 @@ import CharacterCreator from './CreateCharacter';
 import CharacterCarousel from './CharacterCarousel';
 import ViewCharacter from './ViewCharacter';
 import ScrollingBanner from '../../sites/Header';
-<<<<<<< HEAD
 import Footer from '../../sites/Footer';
-=======
 import APIURL from '../../helpers/environment';
->>>>>>> 54da09d17ba98517361b974634aa286b06cc488f
 
 const CharacterIndex = (props) => {
     const [characters, setCharacters] = useState([]);

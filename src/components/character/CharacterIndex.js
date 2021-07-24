@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { } from 'reactstrap';
-import { Link, Route, Switch } from 'react-router-dom';
 import Sidebar from '../../sites/Sidebar';
 import CharacterCreator from './CreateCharacter';
 import CharacterCarousel from './CharacterCarousel';
 import ViewCharacter from './ViewCharacter';
 import ScrollingBanner from '../../sites/Header';
+import Footer from '../../sites/Footer'
 import APIURL from '../../helpers/environment';
+
 
 const CharacterIndex = (props) => {
     const [characters, setCharacters] = useState([]);
@@ -83,7 +84,7 @@ const CharacterIndex = (props) => {
                 </div>
             </div>
             <div className='footer'>
-                <h4>some footer text</h4>
+                <Footer />
             </div>
         </div>
     )

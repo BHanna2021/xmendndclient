@@ -28,8 +28,8 @@ const Auth = (props) => {
                 <Col md="2">
                     <Button className="signUp" type="button" onClick={toggleCreateUserOn}>Sign Up</Button>
                     {createActiveUser ? <CreateUser toggleCreateUserOff={toggleCreateUserOff} 
-                    updateToken={props.updateToken}
-                    /> : <></>}
+                updateToken={props.updateToken}
+                /> : <></>}
                 </Col>
             </Row>
         </Container>

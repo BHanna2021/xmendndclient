@@ -65,6 +65,7 @@ const CreateUser = (props) => {
                                 onChange={(e) => setEmail(e.target.value)}
                                 name="email"
                                 value={email}
+                                type="email"
                                 required
                             />
                         </FormGroup>

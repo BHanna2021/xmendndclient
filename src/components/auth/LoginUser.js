@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { Form, FormGroup, Label, Input, Button } from "reactstrap";
-import { Container, Row, Col } from "reactstrap";
+import { Container,} from "reactstrap";
 import APIURL from '../../helpers/environment';
 
 const LoginUser = (props) => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [userId, setUserId] = useState("");
+    const [handle, setHandle] = useState("");
 
     let handleSubmit = (event) => {
         event.preventDefault();
@@ -14,7 +15,7 @@ const LoginUser = (props) => {
 
             method: "POST",
             body: JSON.stringify({
-                user: { email: email, password: password },
+                user: { email: email, password: password, handle, handle },
             }),
             headers: new Headers({
                 "Content-Type": "application/json",
@@ -24,7 +25,6 @@ const LoginUser = (props) => {
                 (response) => response.json()
             )
             .then((data) => {
-                console.log(data);
                 props.updateToken(data.sessionToken);
                 setUserId(data.user.id)
             })

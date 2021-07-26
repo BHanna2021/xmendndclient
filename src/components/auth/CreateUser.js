@@ -38,7 +38,6 @@ const CreateUser = (props) => {
                 (response) => response.json()
             )
             .then((data) => {
-                console.log(data.sessionToken);
                 props.updateToken(data.sessionToken);
                 setUserId(data.id);
                 console.log(userId);

@@ -1,7 +1,6 @@
 import React from 'react';
 
 const ScrollingBanner = () => {
-
     return (
         <div id="BannerContainer" style={{backgroundColor: "bisque"}}>
             <logo-slider>

@@ -8,6 +8,8 @@ import {
     Modal,
     ModalHeader,
     ModalBody,
+    Row,
+    Col
 } from "reactstrap";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import APIURL from '../../helpers/environment';
@@ -53,7 +55,7 @@ const CreateUser = (props) => {
         <div>
             <Modal isOpen={modalOpen}>
                 <ModalHeader>
-                    <h1>Signup</h1>
+                    <h2>Who goes there?</h2>
                 </ModalHeader>
                 <ModalBody>
                     <Form onSubmit={handleSubmit}>
@@ -66,6 +68,7 @@ const CreateUser = (props) => {
                                 required
                             />
                         </FormGroup>
+                        <br/>
                         <FormGroup>
                             <Label htmlFor="password">Password</Label>
                             <Input
@@ -76,6 +79,7 @@ const CreateUser = (props) => {
                                 required
                             />
                         </FormGroup>
+                        <br/>
                         <FormGroup>
                             <Label htmlFor="handle">DnD handle</Label>
                             <Input
@@ -84,8 +88,16 @@ const CreateUser = (props) => {
                                 value={handle}
                             />
                         </FormGroup>
-                        <Button type="submit">Signup</Button>
-                        <Button onClick={closeModal}>Cancel</Button>
+                        <br/>
+                        <Row>
+                            <Col md="3">
+                                <Button style={{backgroundColor: "darkblue", fontSize: "110%"}} type="submit">Join Us</Button>
+                            </Col>
+                            <Col md="2">
+                                <Button style={{backgroundColor: "darkslateblue", fontSize: "110%"}} onClick={closeModal}>Cancel</Button>
+                            </Col>
+                        </Row>
+                        
                     </Form>
                 </ModalBody>
             </Modal>

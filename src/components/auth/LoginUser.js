@@ -37,7 +37,7 @@ const LoginUser = (props) => {
                     <h1>Adventure Awaits</h1>
                 </div>
                 <div>
-                    <h3>Login Here:</h3>
+                    <h3 style={{fontSize: "175%"}}>Login Here:</h3>
                     <Form onSubmit={handleSubmit}>
                         <FormGroup>
                             <Label htmlFor="email">Email Address</Label>
@@ -62,7 +62,7 @@ const LoginUser = (props) => {
                             />
                         </FormGroup>
                         <br/>
-                        <Button type="submit">Login</Button>
+                        <Button style={{backgroundColor: "darkblue", fontSize: "110%"}} type="submit">Login</Button>
                     </Form>
                 </div>
             </Container>

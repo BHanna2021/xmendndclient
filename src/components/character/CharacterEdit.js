@@ -67,16 +67,16 @@ const EditCharacter = (props) => {
     return(
         <>
         <Modal isOpen={editModalOpen}>
-                <ModalHeader>
-                    <h2>DnD Character Creator</h2>
+                <ModalHeader style={{backgroundColor: "wheat"}}>
+                    <h2>DnD Character Update</h2>
                 </ModalHeader>
-                <ModalBody>
+                <ModalBody style={{backgroundColor: "antiquewhite"}}>
                 <Form onSubmit={handleSubmit}>
                 <Row form>
                     <Col md={12}>
                         <FormGroup>
-                            <h3>Welcome to Character Creator!</h3>
-                            <p>See where your imagination can take you.</p>
+                            <h3>What adventures will {props.characterToView.name} take you on next?</h3>
+                            {/* <p></p> */}
                         </FormGroup>
                     </Col>
                 </Row>
@@ -132,14 +132,13 @@ const EditCharacter = (props) => {
                 <Row>
                     <Col md={6}>
                         <FormGroup>
-                            <Label htmlFor="weight">Weight: </Label>
+                            <Label htmlFor="weight">Weight (lbs): </Label>
                             <Input size="sm" type="number" name="weight" value={editWeight} onChange={(e) => setEditWeight(e.target.value)} />
-                            <Label htmlFor="weight"> lbs</Label>
                         </FormGroup>
                     </Col>
                     <Col md={3}>
                         <FormGroup>
-                            <Label htmlFor="height">Height: </Label>
+                            <Label htmlFor="height">Height (ft): </Label>
                             <Input type="select" name="height_ft" value={editHeight_ft} onChange={(e) => setEditHeight_ft(e.target.value)}>
                                 <option></option>
                                 <option>0</option>
@@ -153,12 +152,11 @@ const EditCharacter = (props) => {
                                 <option>8</option>
                                 <option>9</option>
                             </Input>
-                            <Label htmlFor="height_ft"> ft </Label>
                         </FormGroup>
                     </Col>
                     <Col md={3}>
                         <FormGroup>
-                            <Label htmlFor="height"></Label>
+                            <Label htmlFor="height">(in):</Label>
                             <Input type="select" name="height_in" value={editHeight_in} onChange={(e) => setEditHeight_in(e.target.value)}>
                                 <option></option>
                                 <option>0</option>
@@ -174,7 +172,6 @@ const EditCharacter = (props) => {
                                 <option>10</option>
                                 <option>11</option>
                             </Input>
-                            <Label htmlFor="height_in"> in</Label>
                             </FormGroup>
                     </Col>
                 </Row>
@@ -326,12 +323,12 @@ const EditCharacter = (props) => {
                     <Col md={2}>
                     </Col>
                     <Col md={3}>
-                        <Button type="submit">Update</Button>
+                        <Button style={{backgroundColor: "darkmagenta", letterSpacing: "1px", fontSize: "115%"}} type="submit">Update</Button>
                     </Col>
                     <Col md={2}>
                     </Col>
                     <Col md={3}>
-                        <Button onClick={closeModal}>Cancel</Button>
+                        <Button style={{backgroundColor: "midnightblue", letterSpacing: "1px", fontSize: "115%"}} onClick={closeModal}>Cancel</Button>
                     </Col>
                 </Row>
                 </Form>

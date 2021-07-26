@@ -62,7 +62,7 @@ const Sidebar = (props) => {
                 </ul>
                 <Nav className="ml-auto" navbar>
                     <NavItem id="button">
-                        <Button onClick={props.clickLogout}>Logout</Button>
+                        <Button style={{backgroundColor: "midnightblue", fontSize: "65%", letterSpacing: "1px"}} onClick={props.clickLogout}>Logout</Button>
                     </NavItem>
                 </Nav>
                 <br/>

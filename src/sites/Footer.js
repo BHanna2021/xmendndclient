@@ -3,7 +3,7 @@ import React from 'react';
 const Footer = () => {
 
     return(
-        <div>
+        <div style={{backgroundColor: "antiquewhite"}}>
 
         </div>
     )

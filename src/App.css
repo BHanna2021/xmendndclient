@@ -9,11 +9,11 @@
 }
 
 * h2{
-  font-size: 150%;
+  font-size: 250%;
 }
 
 * h3 {
-  font-size: 120%;
+  font-size: 140%;
 }
 
 * button{
@@ -22,6 +22,7 @@
 
 * Label {
   font-size: 125%;
+  letter-spacing: .5px;
 }
 
 * p {
@@ -32,11 +33,11 @@
   margin: 30% 40% 25% 50%;
   background-color: antiquewhite;
   padding: 5% 5% 5% 15%;
-  border-radius: 5%;
+  border-radius: 25px;
 }
 
 .signUp {
-  margin-top: 266%;
+  margin-top: 270%;
   margin-left: -85%;
 }
 
@@ -64,7 +65,7 @@ h6 {
 }
 
 .App-header {
-  background-color: #742900;
+  /* background-color: #742900; */
   /* min-height: 100vh; */
   display: flex;
   flex-direction: column;
@@ -122,13 +123,13 @@ h3 {
 
 .header {
   min-height: 150px;
-  background-color: rgb(87, 18, 2);
+  /* background-color: rgb(87, 18, 2); */
   border: 2px red solid;
 }
 
 .footer {
   min-height: 150px;
-  background-color: rgb(87, 18, 2);
+  background-color:bisque;
   border: 2px red solid;
 }
 
@@ -173,7 +174,7 @@ h3 {
   background-color: #485003;
   opacity: .85;
   font-size: calc(10px + 2vmin);
-  color: lightgrey;
+  color: white;
   grid-column: 1 / 2;
   min-height: 700px;
   border: 2px red solid;
@@ -189,10 +190,10 @@ h3 {
 #featurecard {
   list-style-type: none;
   min-width: 500px;
-  max-width: 500px;
+  max-width: 700px;
   background-color: #485003;
   opacity: .85;
-  color: lightgray;
+  color: whitesmoke;
   margin-left: 0;
 }
 
@@ -208,7 +209,7 @@ h3 {
   font-size: 36px;
   border: 2px solid lightgray;
   max-width:fit-content;
-  color: lightgray;
+  color: white;
   vertical-align: middle;
 }
 

@@ -6,7 +6,7 @@ import APIURL from '../../helpers/environment';
 const LoginUser = (props) => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
-    const [handle, setHandle] = useState("");
+    const [userId, setUserId] = useState("");
 
     let handleSubmit = (event) => {
         event.preventDefault();
@@ -24,7 +24,9 @@ const LoginUser = (props) => {
                 (response) => response.json()
             )
             .then((data) => {
+                console.log(data);
                 props.updateToken(data.sessionToken);
+                setUserId(data.user.id)
             })
     }
 
@@ -35,8 +37,7 @@ const LoginUser = (props) => {
                     <h1>Adventure Awaits</h1>
                 </div>
                 <div>
-                    <h3>Login Here</h3>
-                    <br/>
+                    <h3>Login Here:</h3>
                     <Form onSubmit={handleSubmit}>
                         <FormGroup>
                             <Label htmlFor="email">Email Address</Label>
@@ -44,6 +45,7 @@ const LoginUser = (props) => {
                                 onChange={(e) => setEmail(e.target.value)}
                                 name="email"
                                 value={email}
+                                className="w-75"
                                 required
                             />
                         </FormGroup>
@@ -55,6 +57,7 @@ const LoginUser = (props) => {
                                 name="password"
                                 value={password}
                                 type="password"
+                                className="w-75"
                                 required
                             />
                         </FormGroup>

@@ -8,6 +8,7 @@ const Sidebar = (props) => {
     const [characters, setCharacters] = useState([]);
     const [updateActive, setUpdateActive] = useState(false);
 
+
     const fetchCharacters = () => {
         fetch(`${APIURL}/character/mine`, {
             method: 'GET',

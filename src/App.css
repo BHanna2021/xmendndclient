@@ -13,15 +13,15 @@
 }
 
 * h3 {
-  font-size: 100%;
+  font-size: 120%;
 }
 
 * button{
-  font-size: 100%;
+  font-size: 110%;
 }
 
 * Label {
-  font-size: 120%;
+  font-size: 125%;
 }
 
 * p {
@@ -29,12 +29,15 @@
 }
 
 .auth-container{
-  margin: 5% 25%;
-  padding-bottom: 5%;
+  margin: 30% 40% 25% 50%;
+  background-color: antiquewhite;
+  padding: 5% 5% 5% 15%;
+  border-radius: 5%;
 }
 
 .signUp {
-  margin: -52% -135% 52% 135%;
+  margin-top: 266%;
+  margin-left: -85%;
 }
 
 .index {

@@ -15,19 +15,20 @@ const Auth = (props) => {
     }
 
     return (
-        <Container className="auth-container">
+        <Container>
             <Row>
                 <Col md="6" className="loginUser-col">
                     <LoginUser updateToken={props.updateToken} />
                 </Col>
-            </Row>
-            <Row>
                 <Col md="2">
                     <Button className="signUp" type="button" onClick={toggleCreateUserOn}>Sign Up</Button>
                     {createActiveUser ? <CreateUser toggleCreateUserOff={toggleCreateUserOff} 
                 updateToken={props.updateToken}
                 /> : <></>}
                 </Col>
+            </Row>
+            <Row>
+
             </Row>
         </Container>
     )

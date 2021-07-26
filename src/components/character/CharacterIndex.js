@@ -102,8 +102,9 @@ const CharacterIndex = (props) => {
                         {createActive ? <CharacterCreator toggleCreateOff={toggleCreateOff} token={props.token} /> : <></>}
                     </div>
                     <br />
-                    <ViewCharacter characters={characters} characterToView={characterToView} fetchCharacters={fetchCharacters} token={props.token} />
                     <CharacterCarousel characters={characters} fetchCharacters={fetchCharacters} token={props.token} />
+
+                    <ViewCharacter characters={characters} characterToView={characterToView} fetchCharacters={fetchCharacters} token={props.token} />
                 </div>
             </div>
             <div className='footer'>

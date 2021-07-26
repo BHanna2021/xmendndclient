@@ -45,6 +45,7 @@ const LoginUser = (props) => {
                                 onChange={(e) => setEmail(e.target.value)}
                                 name="email"
                                 value={email}
+                                type="email"
                                 className="w-75"
                                 required
                             />

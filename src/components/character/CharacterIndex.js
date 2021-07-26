@@ -16,12 +16,34 @@ const CharacterIndex = (props) => {
     const [sessionToken, setSessionToken] = useState('');
     const [createActive, setCreateActive] = useState(false);
 
+    // const [userHandle, setUserHandle] = useState('');
+    // const [userCreated, setUserCreated] = useState('');
+    // const [memberSince, setMemberSince] = useState('');
+
     useEffect(() => {
         if (localStorage.getItem('token')) {
             setSessionToken(localStorage.getItem('token'));
         }
     }, [])
 
+    // const fetchUserData = () => {
+    //     console.log(props.id)
+    //     fetch(`${APIURL}/${props.id}`, {
+    //         method: 'GET',
+    //         headers: new Headers ({
+    //             'Content-Type': 'application/json'
+    //         })
+    //     }) .then((res) => res.json())
+    //     .then((userData) => {
+    //         setUserHandle(userData.handle);
+    //         setUserCreated(userData.createdAt)
+    //     .then(calculateMemberTime)
+    //     })
+    // }
+
+    // const calculateMemberTime = (userCreated) => {
+    //     setMemberSince(userCreated.split(' ')[0]);
+    // }
 
     // const updateToken = (newToken) => {
     //     localStorage.setItem('token', newToken);
@@ -58,6 +80,7 @@ const CharacterIndex = (props) => {
     }
     useEffect(() => {
         // fetchCharacters();
+        // fetchUserData();
     }, [])
 
     return (
@@ -68,6 +91,7 @@ const CharacterIndex = (props) => {
             <div className='layout' >
                 <nav>
                     <Sidebar clickLogout={clearToken} token={props.token} setCharacterToView={setCharacterToView} characters={characters} />
+                    {/* <Sidebar clickLogout={clearToken} userHandle={userHandle} token={props.token} setCharacterToView={setCharacterToView} characters={characters} /> */}
                 </nav>
                 <div className='content'>
                     <h1>something to see</h1>

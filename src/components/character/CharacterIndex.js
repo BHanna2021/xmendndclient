@@ -7,6 +7,7 @@ import ViewCharacter from './ViewCharacter';
 import ScrollingBanner from '../../sites/Header';
 import Footer from '../../sites/Footer';
 import APIURL from '../../helpers/environment';
+import RightSidebar from '../../sites/RightSidebar';
 
 const CharacterIndex = (props) => {
     const [characters, setCharacters] = useState([]);
@@ -76,6 +77,14 @@ const CharacterIndex = (props) => {
         // fetchUserData();
     }, [])
 
+    function Display(props) {
+        const displayCard = props.characterToView;
+        if (displayCard) {
+            return <ViewCharacter />
+        }
+        return <CharacterCarousel />
+    }
+
     return (
         <div className='index'>
             <div>
@@ -95,8 +104,12 @@ const CharacterIndex = (props) => {
                         {createActive ? <CharacterCreator toggleCreateOff={toggleCreateOff} token={props.token} /> : <></>}
                     </div>
                     <br />
-                    <ViewCharacter characters={characters} characterToView={characterToView} fetchCharacters={fetchCharacters} token={props.token} />
-                    <CharacterCarousel characters={characters} fetchCharacters={fetchCharacters} token={props.token} />
+                    {/* <CharacterCarousel characters={characters} fetchCharacters={fetchCharacters} token={props.token} /> */}
+                    <Display displayCard={false} />
+                    {/* <ViewCharacter characters={characters} characterToView={characterToView} fetchCharacters={fetchCharacters} token={props.token} /> */}
+                </div>
+                <div className="rightsidebar">
+                    <RightSidebar />
                 </div>
             </div>
             <div className='footer'>

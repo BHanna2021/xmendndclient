@@ -116,7 +116,7 @@ h3 {
 
 .layout {
   display: grid;
-  grid-template-columns: max-content auto;
+  grid-template-columns: max-content auto max-content;
   border: 2px red solid;
 
 }
@@ -145,10 +145,26 @@ h3 {
   display: flex;
   flex-direction: column;
   align-items: center;
-
 }
 
-.sidebar_list {
+.rightsidebar {
+  grid-column: 3 / 4;
+  background-color: #485003;
+  opacity: .85;
+  font-size: calc(10px + 2vmin);
+  letter-spacing: 1px;
+  color: white;
+  min-height: 700px;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  padding-left: 8px;
+  padding-right: 8px;
+  min-width: 200px;
+  max-width: max-content;
+}
+
+/* .sidebar_list {
   font-size: small;
   background-color: darkgoldenrod;
   border: 4px solid black;
@@ -158,16 +174,14 @@ h3 {
   text-align: center;
   padding: 1px;
   margin: 1px auto;
-}
+} */
 
-.container {
-  /* width: 600px; */
-}
-
+/* Sidebar */
 #sidebar {
   background-color: #485003;
   opacity: .85;
   font-size: calc(10px + 2vmin);
+  letter-spacing: 1px;
   color: white;
   grid-column: 1 / 2;
   min-height: 700px;
@@ -181,35 +195,19 @@ h3 {
   max-width: max-content;
 }
 
-#featurecard {
-  list-style-type: none;
-  min-width: 500px;
-  max-width: 700px;
-  background-color: #485003;
-  opacity: .85;
-  color: whitesmoke;
-  margin-left: 0;
-}
-
-#carousel {
-  border: 2px red solid;
-  max-width: 350px;
-  max-height: 350px;
-}
-
 #table {
   display: grid;
   grid-template-rows: 25px auto;
   font-size: 36px;
+  letter-spacing: 1px;
   border: 2px solid lightgray;
   max-width:fit-content;
   color: white;
-  vertical-align: middle;
 }
 
 #viewbutton {
   max-height: 20px;
-  font-size: 8px;
+  font-size: 10px;
   width: 60px;
   color: white;
   text-align: center;
@@ -223,6 +221,28 @@ h3 {
 #secondcol {
   grid-row: 2 / 3;
   font-size: 12px;
+}
+
+/* Carousel */
+#carousel {
+  border: 2px red solid;
+  min-height: max-content;
+  min-width: 750px;
+  max-width: 800px;
+  max-height: max-content;
+  font-size: 24px;
+  text-shadow: 2px 2px black;
+}
+
+/* Character View */
+#featurecard {
+  list-style-type: none;
+  min-width: 500px;
+  max-width: 700px;
+  background-color: #485003;
+  opacity: .85;
+  color: whitesmoke;
+  margin-left: 0;
 }
 
 #table2 {
@@ -245,7 +265,6 @@ h3 {
   justify-content: left;
   vertical-align: middle;
 }
-
 
 #BannerContainer {
   width: 100%;

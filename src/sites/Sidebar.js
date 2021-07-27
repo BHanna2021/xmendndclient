@@ -70,7 +70,6 @@ const Sidebar = (props) => {
             <Container>
 
                         <CharacterTable characters={characters} displayCharacter={displayCharacter} fetchCharacters={fetchCharacters} token={props.token} />
-                        {/* <ViewCharacter characters={characters} displayCharacter={displayCharacter} fetchCharacters={fetchCharacters} token={props.token} /> */}
                     {updateActive ? <ViewCharacter characters={characters} characterToView={props.characterToView} setCharactersToView={props.setCharacterToView} updateOff={updateOff} token={props.token} updateOn={updateOn} fetchCharacters={fetchCharacters} /> : <></>}
 
             </Container>

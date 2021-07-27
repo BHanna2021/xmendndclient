@@ -56,7 +56,9 @@ const ViewCharacter = (props) => {
                                 <tr>
                                     <th style={{letterSpacing: "1.5px", fontSize: "115%"}}>Level:  {props.characterToView.level}</th>
                                 </tr>
-
+                                {/* <tr>
+                                    <th style={{letterSpacing: "1.5px", fontSize: "115%"}}>HP:  {props.characterToView.hp}</th>
+                                </tr> */}
                                 <hr/>
                                 <div class="d-grid gap-2 col-8 mx-auto">
                                     <button style={{backgroundColor: "indigo", borderRadius: "15px", letterSpacing: "1.5px", fontSize: "105%"}} class="btn btn-secondary btn-block" type="button" onClick={editOn}>Update</button>
@@ -79,6 +81,9 @@ const ViewCharacter = (props) => {
                                 <tr>
                                     <th style={{letterSpacing: "1.5px", fontSize: "115%"}}>Weight: {props.characterToView.weight}</th>
                                 </tr>
+                                {/* <tr>
+                                    <th style={{letterSpacing: "1.5px", fontSize: "115%"}}>Session Notes: {props.characterToView.session_notes}</th>
+                                </tr> */}
                                 <hr/>
                                 <div class="d-grid gap-2 col-8 mx-auto">
                                     <button style={{backgroundColor: "midnightblue", borderRadius: "15px", letterSpacing: "1.5px", fontSize: "105%"}} class="btn btn-secondary btn-block" type="button" onClick={() => {deleteCharacter(props.characterToView)}}>Delete</button>

@@ -300,7 +300,7 @@ const EditCharacter = (props) => {
                 <Row>
                 <Col md={6}>
                         <Label for="level">Level: </Label>
-                        <Input type="number" name="level" value={editLevel} onChange={(e) => setEditLevel(e.target.value)}/>
+                        <Input type="number" name="level" max="20" value={editLevel} onChange={(e) => setEditLevel(e.target.value)}/>
                     </Col>
                     <Col md={6}>
                         <Label for="experience">Experience: </Label>

@@ -53,10 +53,10 @@ const CreateUser = (props) => {
     return (
         <div>
             <Modal isOpen={modalOpen}>
-                <ModalHeader>
-                    <h2>Who goes there?</h2>
+                <ModalHeader style={{backgroundColor: "wheat"}}>
+                    <h2 style={{color: "indigo"}}>Who goes there?</h2>
                 </ModalHeader>
-                <ModalBody>
+                <ModalBody style={{backgroundColor: "antiquewhite"}}>
                     <Form onSubmit={handleSubmit}>
                         <FormGroup>
                             <Label htmlFor="email">Email Address</Label>

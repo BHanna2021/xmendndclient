@@ -28,6 +28,9 @@ const EditCharacter = (props) => {
     const [editBackground, setEditBackground] = useState(props.characterToView.background);
     const [editLevel, setEditLevel] = useState(props.characterToView.level);
     const [editExperience, setEditExperience] = useState(props.characterToView.experience);
+    const [editHitPoints, setEditHitPoints] = useState(props.characterToView.hit_points);
+    const [editLanguage, setEditLanguage] = useState(props.characterToView.language);
+    const [editSessionNotes, setEditSessionNotes] = useState(props.characterToView.session_notes);
     const [editModalOpen, setEditModalOpen] = useState(true);
 
     const handleSubmit = (e) => {
@@ -46,6 +49,9 @@ const EditCharacter = (props) => {
                 background: editBackground,
                 level: editLevel,
                 experience: editExperience,
+                hit_points: editHitPoints,
+                language: editLanguage,
+                session_notes: editSessionNotes,
             }}),
             headers: new Headers({
                 'Content-Type': 'application/json',
@@ -53,6 +59,7 @@ const EditCharacter = (props) => {
             })
         }).then((res) => {
             setEditModalOpen(false)
+            setEditLanguage(props.characterToView.language)
             props.editOff()
             window.location='/'
         })
@@ -76,7 +83,6 @@ const EditCharacter = (props) => {
                     <Col md={12}>
                         <FormGroup>
                             <h3>What adventures will {props.characterToView.name} take you on next?</h3>
-                            {/* <p></p> */}
                         </FormGroup>
                     </Col>
                 </Row>
@@ -179,13 +185,15 @@ const EditCharacter = (props) => {
                     <br/>
                 </Row>
                 <Row>
-                    <Col md={2}>
-                        <Label htmlFor="gender" value={editGender}>Gender: </Label>
+                    <Col md={12} className="text-center">
+                        <Label htmlFor="gender" value={editGender}>Current Gender: {props.characterToView.gender}</Label>
                     </Col>
-                    <Col md={3}>
+                </Row>
+                <Row>
+                    <Col md={4}>
                         <FormGroup>
                             <Label check>
-                                <Input checked={props.characterToView.gender==="Female"} type="radio" name="gender" value="Female" onChange={(e) => setEditGender(e.target.value)} />
+                                <Input type="radio" name="gender" value="Female" onChange={(e) => setEditGender(e.target.value)} />
                                 &nbsp;Female
                             </Label>
                         </FormGroup>
@@ -193,15 +201,15 @@ const EditCharacter = (props) => {
                     <Col md={4}>
                         <FormGroup>
                             <Label check>
-                                <Input checked={props.characterToView.gender==="Non-Binary"} type="radio" name="gender" value="Non-Binary" onChange={(e) => setEditGender(e.target.value)} />
+                                <Input type="radio" name="gender" value="Non-Binary" onChange={(e) => setEditGender(e.target.value)} />
                                 &nbsp;Non-Binary
                             </Label>
                         </FormGroup>
                     </Col>
-                    <Col md={3}>
+                    <Col md={4}>
                         <FormGroup>
                             <Label check>
-                                <Input checked={props.characterToView.gender==="Male"} type="radio" name="gender" value="Male" onChange={(e) => setEditGender(e.target.value)} />
+                                <Input type="radio" name="gender" value="Male" onChange={(e) => setEditGender(e.target.value)} />
                                 &nbsp;Male
                             </Label>
                         </FormGroup>
@@ -232,7 +240,6 @@ const EditCharacter = (props) => {
                             <ButtonToggle value="Neutral Evil" color="warning" name="alignment" onClickCapture={(e) => setEditAlignment(e.target.value)}>Neutral Evil</ButtonToggle>
                         </ButtonGroup>
                     </Col>
-
                     <Col md={4}>
                         <ButtonGroup vertical>
                             <ButtonToggle value="Chaotic Good" color="primary" name="alignment" onClickCapture={(e) => setEditAlignment(e.target.value)}>Chaotic Good</ButtonToggle>
@@ -245,7 +252,24 @@ const EditCharacter = (props) => {
                     <br/>
                 </Row>
                 <Row>
-                    <Col>
+                    <Col md={4}>
+                        <Label for="HP">HP: </Label>
+                        <Input type="number" name="HP" value={editHitPoints} onChange={(e) => setEditHitPoints(e.target.value)} />
+                    </Col>
+                    <Col md={4}>
+                        <Label for="level">Level: </Label>
+                        <Input type="number" name="level" max="20" value={editLevel} onChange={(e) => setEditLevel(e.target.value)}/>
+                    </Col>
+                    <Col md={4}>
+                        <Label for="experience">Experience: </Label>
+                        <Input type="text" name="experience" value={editExperience} onChange={(e) => setEditExperience(e.target.value)}/>
+                    </Col>
+                </Row>
+                <Row>
+                    <br/>
+                </Row>
+                <Row>
+                    <Col md={6}>
                         <FormGroup>
                             <Label for="background">Background: </Label>
                             <Input type="select" name="background" value={editBackground} onChange={(e) => setEditBackground(e.target.value)}>
@@ -293,27 +317,19 @@ const EditCharacter = (props) => {
                             </Input>
                         </FormGroup>
                     </Col>
-                </Row>
-                <Row>
-                    <br/>
-                </Row>
-                <Row>
-                <Col md={6}>
-                        <Label for="level">Level: </Label>
-                        <Input type="number" name="level" max="20" value={editLevel} onChange={(e) => setEditLevel(e.target.value)}/>
-                    </Col>
                     <Col md={6}>
-                        <Label for="experience">Experience: </Label>
-                        <Input type="text" name="experience" value={editExperience} onChange={(e) => setEditExperience(e.target.value)}/>
-                    </Col>
-                </Row>
-                <Row>
-                    <br/>
-                </Row>
-                <Row>
-                <Col md={12}>
                     <Label for="name">Character Name: </Label>
                     <Input type="text"  name="name" value={editName} onChange={(e) => setEditName(e.target.value)}/>
+                    </Col>
+                </Row>
+                <Row>
+                    <br/>
+                </Row>
+                <Row>
+                    <Col md={12}>
+                        <Label htmlFor="Session Notes">Session Notes:</Label>
+                        <br/>
+                        <Input type="textarea" name="Session Notes" value={editSessionNotes} onChange={(e) => setEditSessionNotes(e.target.value)}/>
                     </Col>
                 </Row>
                 <Row>

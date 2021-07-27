@@ -12,21 +12,20 @@ export const Container = styled.div`
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
-	max-width: 1000px;
+	max-width: 1100px;
 	margin: auto;
 `;
 
 export const Column = styled.div`
 display: flex;
 flex-direction: column;
-// text-align: left;
 margin-left: 60px;
 `;
 
 export const Row = styled.div`
 display: grid;
 grid-template-columns: repeat(auto-fill,
-						minmax(185px, 1fr));
+						minmax(175px, 1fr));
 grid-gap: 20px;
 
 @media (max-width: 1000px) {

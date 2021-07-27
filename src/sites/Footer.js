@@ -32,6 +32,12 @@ const Footer = () => {
                         <FooterLink href="https://app.roll20.net/" target="_blank"> Roll20 Online Play </FooterLink>
                     </Column>
                     <Column>
+                        <Heading>Resources</Heading>
+                        <FooterLink href="https://dnd.wizards.com/" target="_blank">Dungeons &amp; Dragons</FooterLink>
+                        <FooterLink href="https://dicegrimorium.com/free-rpg-map-library/" target="_blank"> Free Digital Maps </FooterLink>
+                        <FooterLink href="https://www.dndbeyond.com/" target="_blank"> D&amp;D Beyond </FooterLink>
+                    </Column>
+                    <Column>
                         <Heading>Issues</Heading>
                         <FooterLink href="https://github.com/BHanna2021/xmendndclient/issues" target="_blank"><GitHubIcon /> GitHub Repository</FooterLink>
                     </Column>

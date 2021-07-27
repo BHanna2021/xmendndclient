@@ -28,6 +28,9 @@ const CharacterCreator = (props) => {
     const [background, setBackground] = useState('');
     const [level, setLevel] = useState('');
     const [experience, setExperience] = useState('');
+    const [hitPoints, setHitPoints] = useState('');
+    const [language, setLanguage] = useState('');
+    const [sessionNotes, setSessionNotes] = useState('');
     const [modalOpen, setModalOpen] = useState(true);
 
     const handleSubmit = (e) => {
@@ -46,6 +49,9 @@ const CharacterCreator = (props) => {
                 background: background,
                 level: level,
                 experience: experience,
+                hit_points: hitPoints,
+                language: language,
+                session_notes: sessionNotes,
             }}),
             headers: new Headers({
                 'Content-Type': 'application/json',
@@ -64,8 +70,11 @@ const CharacterCreator = (props) => {
             setBackground('');
             setLevel('');
             setExperience('');
+            setHitPoints('');
+            setLanguage('Common');
+            setSessionNotes('');
             setModalOpen(false);
-            window.location="/"
+            // window.location="/"
         })
     }
 
@@ -77,16 +86,15 @@ const CharacterCreator = (props) => {
     return(
         <>
         <Modal isOpen={modalOpen}>
-                <ModalHeader>
+                <ModalHeader style={{backgroundColor: "wheat"}}>
                     <h2>DnD Character Creator</h2>
                 </ModalHeader>
-                <ModalBody>
+                <ModalBody style={{backgroundColor: "antiquewhite"}}>
                 <Form onSubmit={handleSubmit}>
                 <Row form>
                     <Col md={12}>
                         <FormGroup>
-                            <h3>Welcome to Character Creator!</h3>
-                            <p>See where your imagination can take you.</p>
+                            <h3>See where your imagination can take you.</h3>
                         </FormGroup>
                     </Col>
                 </Row>
@@ -140,16 +148,15 @@ const CharacterCreator = (props) => {
                     <br/>
                 </Row>
                 <Row>
-                    <Col md={6}>
+                    <Col md={4}>
                         <FormGroup>
-                            <Label htmlFor="weight">Weight: </Label>
-                            <Input size="sm" type="number" name="weight" value={weight} onChange={(e) => setWeight(e.target.value)} />
-                            <Label htmlFor="weight"> lbs</Label>
+                            <Label htmlFor="weight">Weight (lbs): </Label>
+                            <Input type="number" name="weight" value={weight} onChange={(e) => setWeight(e.target.value)} />
                         </FormGroup>
                     </Col>
-                    <Col md={3}>
+                    <Col md={4}>
                         <FormGroup>
-                            <Label htmlFor="height">Height: </Label>
+                            <Label htmlFor="height">Height (ft): </Label>
                             <Input type="select" name="height_ft" value={height_ft} onChange={(e) => setHeight_ft(e.target.value)}>
                                 <option></option>
                                 <option>0</option>
@@ -163,12 +170,11 @@ const CharacterCreator = (props) => {
                                 <option>8</option>
                                 <option>9</option>
                             </Input>
-                            <Label htmlFor="height_ft"> ft </Label>
                         </FormGroup>
                     </Col>
-                    <Col md={3}>
+                    <Col md={4}>
                         <FormGroup>
-                            <Label htmlFor="height"></Label>
+                            <Label htmlFor="height">(in): </Label>
                             <Input type="select" name="height_in" value={height_in} onChange={(e) => setHeight_in(e.target.value)}>
                                 <option></option>
                                 <option>0</option>
@@ -184,7 +190,6 @@ const CharacterCreator = (props) => {
                                 <option>10</option>
                                 <option>11</option>
                             </Input>
-                            <Label htmlFor="height_in"> in</Label>
                             </FormGroup>
                     </Col>
                 </Row>
@@ -243,7 +248,6 @@ const CharacterCreator = (props) => {
                             <ButtonToggle value="Neutral Evil" color="warning" name="alignment" onClickCapture={(e) => setAlignment(e.target.value)}>Neutral Evil</ButtonToggle>
                         </ButtonGroup>
                     </Col>
-
                     <Col md={4}>
                         <ButtonGroup vertical>
                             <ButtonToggle value="Chaotic Good" color="primary" name="alignment" onClickCapture={(e) => setAlignment(e.target.value)}>Chaotic Good</ButtonToggle>
@@ -256,7 +260,24 @@ const CharacterCreator = (props) => {
                     <br/>
                 </Row>
                 <Row>
-                    <Col>
+                    <Col md={4}>
+                        <Label for="HP">HP: </Label>
+                        <Input type="number" name="HP" value={hitPoints} onChange={(e) => setHitPoints(e.target.value)} />
+                    </Col>
+                    <Col md={4}>
+                        <Label for="level">Level: </Label>
+                        <Input type="number" name="level" max="20" value={level} onChange={(e) => setLevel(e.target.value)}/>
+                    </Col>
+                    <Col md={4}>
+                        <Label for="experience">Experience: </Label>
+                        <Input type="text" name="experience" value={experience} onChange={(e) => setExperience(e.target.value)}/>
+                    </Col>
+                </Row>
+                <Row>
+                    <br/>
+                </Row>
+                <Row>
+                    <Col md={6}>
                         <FormGroup>
                             <Label for="background">Background: </Label>
                             <Input type="select" name="background" value={background} onChange={(e) => setBackground(e.target.value)}>
@@ -304,27 +325,19 @@ const CharacterCreator = (props) => {
                             </Input>
                         </FormGroup>
                     </Col>
-                </Row>
-                <Row>
-                    <br/>
-                </Row>
-                <Row>
-                <Col md={6}>
-                        <Label for="level">Level: </Label>
-                        <Input type="number" name="level" value={level} onChange={(e) => setLevel(e.target.value)}/>
-                    </Col>
                     <Col md={6}>
-                        <Label for="experience">Experience: </Label>
-                        <Input type="text" name="experience" value={experience} onChange={(e) => setExperience(e.target.value)}/>
+                        <Label for="name">Character Name: </Label>
+                        <Input type="text"  name="name" value={name} onChange={(e) => setName(e.target.value)}/>
                     </Col>
-                </Row>
+                    </Row>
                 <Row>
                     <br/>
                 </Row>
                 <Row>
-                <Col md={12}>
-                    <Label for="name">Character Name: </Label>
-                    <Input type="text"  name="name" value={name} onChange={(e) => setName(e.target.value)}/>
+                    <Col md={12}>
+                    <Label htmlFor="Session Notes">Session Notes:</Label>
+                    <br/>
+                    <Input type="textarea" name="Session Notes" value={sessionNotes} onChange={(e) => setSessionNotes(e.target.value)}/>
                     </Col>
                 </Row>
                 <Row>
@@ -334,12 +347,12 @@ const CharacterCreator = (props) => {
                     <Col md={2}>
                     </Col>
                     <Col md={3}>
-                        <Button type="submit">Create!</Button>
+                        <Button style={{backgroundColor: "darkmagenta", letterSpacing: "1px", fontSize: "115%"}} type="submit">Create!</Button>
                     </Col>
                     <Col md={2}>
                     </Col>
                     <Col md={3}>
-                        <Button onClick={closeModal}>Cancel</Button>
+                        <Button style={{backgroundColor: "midnightblue", letterSpacing: "1px", fontSize: "115%"}} onClick={closeModal}>Cancel</Button>
                     </Col>
                 </Row>
                 </Form>

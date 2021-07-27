@@ -34,7 +34,7 @@ const LoginUser = (props) => {
         <div>
             <Container className="auth-container">
                 <div>
-                    <h1>Adventure Awaits</h1>
+                    <h1 style={{color: "indigo"}}>Adventure Awaits</h1>
                 </div>
                 <div>
                     <h3 style={{fontSize: "175%"}}>Login Here:</h3>

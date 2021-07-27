@@ -15,7 +15,7 @@ const LoginUser = (props) => {
 
             method: "POST",
             body: JSON.stringify({
-                user: { email: email, password: password, handle, handle },
+                user: { email: email, password: password },
             }),
             headers: new Headers({
                 "Content-Type": "application/json",

@@ -4,7 +4,6 @@ import EditCharacter from './CharacterEdit';
 import APIURL from '../../helpers/environment';
 
 const ViewCharacter = (props) => {
-    console.log(props);
     const [editActive, setEditActive] = useState(false);
 
     const editOn = () => {
@@ -85,17 +84,8 @@ const ViewCharacter = (props) => {
                                     <button style={{backgroundColor: "midnightblue", borderRadius: "15px", letterSpacing: "1.5px", fontSize: "105%"}} class="btn btn-secondary btn-block" type="button" onClick={() => {deleteCharacter(props.characterToView)}}>Delete</button>
                                 </div>
                             </div>
-                            <tr>
-
-                            </tr>
                         </table>
                     </div>
-
-
-                    {/* <a href="#" class="btn btn-primary">Go somewhere</a> */}
-                </div>
-                <div class="card-footer text-muted">
-                    2 days ago
                 </div>
             </div>
         </div>

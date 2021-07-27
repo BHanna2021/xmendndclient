@@ -78,8 +78,8 @@ const CharacterIndex = (props) => {
     }, [])
 
     function Display(props) {
-        const displayCard = props.characterToView;
-        if (displayCard) {
+        const displayCharacter = props.displayCharacter;
+        if (displayCharacter) {
             return <ViewCharacter />
         }
         return <CharacterCarousel />
@@ -104,9 +104,9 @@ const CharacterIndex = (props) => {
                         {createActive ? <CharacterCreator toggleCreateOff={toggleCreateOff} token={props.token} /> : <></>}
                     </div>
                     <br />
-                    {/* <CharacterCarousel characters={characters} fetchCharacters={fetchCharacters} token={props.token} /> */}
-                    <Display displayCard={false} />
-                    {/* <ViewCharacter characters={characters} characterToView={characterToView} fetchCharacters={fetchCharacters} token={props.token} /> */}
+                    <CharacterCarousel characters={characters} fetchCharacters={fetchCharacters} token={props.token} />
+                    {/* <Display displayCharacter={false} /> */}
+                    <ViewCharacter characters={characters} characterToView={characterToView} fetchCharacters={fetchCharacters} token={props.token} />
                 </div>
                 <div className="rightsidebar">
                     <RightSidebar />

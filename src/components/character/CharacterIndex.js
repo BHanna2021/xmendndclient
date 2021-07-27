@@ -76,6 +76,14 @@ const CharacterIndex = (props) => {
         // fetchUserData();
     }, [])
 
+    function Display(props) {
+        const displayCard = props.displayCharacter;
+        if (displayCard) {
+            return <ViewCharacter />
+        }
+        return <CharacterCarousel />
+    }
+
     return (
         <div className='index'>
             <div>
@@ -95,9 +103,9 @@ const CharacterIndex = (props) => {
                         {createActive ? <CharacterCreator toggleCreateOff={toggleCreateOff} token={props.token} /> : <></>}
                     </div>
                     <br />
-                    <CharacterCarousel characters={characters} fetchCharacters={fetchCharacters} token={props.token} />
-
-                    <ViewCharacter characters={characters} characterToView={characterToView} fetchCharacters={fetchCharacters} token={props.token} />
+                    {/* <CharacterCarousel characters={characters} fetchCharacters={fetchCharacters} token={props.token} /> */}
+                    <Display displayCard={false} />
+                    {/* <ViewCharacter characters={characters} characterToView={characterToView} fetchCharacters={fetchCharacters} token={props.token} /> */}
                 </div>
             </div>
             <div className='footer'>

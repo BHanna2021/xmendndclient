@@ -1,7 +1,4 @@
 import React from 'react';
-// import './App.css';
-import { Carousel } from 'reactstrap';
-// import "react-responsive-carousel/lib/styles/carousel.min.css"; // ???
 
 const CharacterCarousel = () => {
     return (

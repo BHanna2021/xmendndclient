@@ -74,7 +74,7 @@ const CharacterCreator = (props) => {
             setLanguage('Common');
             setSessionNotes('');
             setModalOpen(false);
-            // window.location="/"
+            window.location="/"
         })
     }
 

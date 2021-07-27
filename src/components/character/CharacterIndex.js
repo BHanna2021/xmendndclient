@@ -7,6 +7,7 @@ import ViewCharacter from './ViewCharacter';
 import ScrollingBanner from '../../sites/Header';
 import Footer from '../../sites/Footer';
 import APIURL from '../../helpers/environment';
+import RightSidebar from '../../sites/RightSidebar';
 
 const CharacterIndex = (props) => {
     const [characters, setCharacters] = useState([]);
@@ -77,7 +78,7 @@ const CharacterIndex = (props) => {
     }, [])
 
     function Display(props) {
-        const displayCard = props.displayCharacter;
+        const displayCard = props.characterToView;
         if (displayCard) {
             return <ViewCharacter />
         }
@@ -106,6 +107,9 @@ const CharacterIndex = (props) => {
                     {/* <CharacterCarousel characters={characters} fetchCharacters={fetchCharacters} token={props.token} /> */}
                     <Display displayCard={false} />
                     {/* <ViewCharacter characters={characters} characterToView={characterToView} fetchCharacters={fetchCharacters} token={props.token} /> */}
+                </div>
+                <div className="rightsidebar">
+                    <RightSidebar />
                 </div>
             </div>
             <div className='footer'>

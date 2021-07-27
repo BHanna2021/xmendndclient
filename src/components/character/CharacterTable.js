@@ -5,6 +5,7 @@ const CharacterTable = (props) => {
     
     const characterMapper = () => {
         return props.characters.map((character, index) => {
+            
             return(
                 <tr key={index}>
                     

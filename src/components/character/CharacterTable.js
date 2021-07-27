@@ -14,7 +14,7 @@ const CharacterTable = (props) => {
                     <td>{character.race}</td>
                     <td>
 
-                        <Button id="viewbutton" class="btn btn-link" onClick={() => {props.displayCharacter(character)}}>View</Button>
+                        <Button id="viewbutton"  class="btn btn-link" onClick={() => {props.displayCharacter(character)}}>View</Button>
 
                     </td>
                 </tr>
@@ -30,9 +30,10 @@ const CharacterTable = (props) => {
             <thead id="firstcol">
                 <tr>
                     <th># |</th>
-                    <th>Name |</th>
-                    <th>Class |</th>
-                    <th>Race</th>
+                    <th>Name | </th>
+                    <th>Class | </th>
+                    <th>Race |</th>
+                    {/* <th>View Char?</th> */}
                 </tr>
             </thead>
             <tbody id="secondcol">

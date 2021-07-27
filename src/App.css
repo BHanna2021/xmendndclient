@@ -1,15 +1,44 @@
 * { 
   box-sizing: border-box;
+  font-family: 'Pirata One', cursive;
+  letter-spacing: .5px;
+}
+
+* h1{
+  font-size: 415%;
+}
+
+* h2{
+  font-size: 250%;
+}
+
+* h3 {
+  font-size: 140%;
+}
+
+* button{
+  font-size: 110%;
+}
+
+* Label {
+  font-size: 125%;
+  letter-spacing: .5px;
+}
+
+* p {
+  font-size: 110%;
 }
 
 .auth-container{
-  margin: 5% 25%;
-  border: red 2px solid;
+  margin: 30% 40% 25% 50%;
+  background-color: antiquewhite;
+  padding: 5% 5% 5% 15%;
+  border-radius: 25px;
 }
 
 .signUp {
-  padding: 5%;
-  border: red 2px solid;
+  margin-top: 270%;
+  margin-left: -85%;
 }
 
 .index {
@@ -36,7 +65,7 @@ h6 {
 }
 
 .App-header {
-  background-color: #742900;
+  /* background-color: #742900; */
   /* min-height: 100vh; */
   display: flex;
   flex-direction: column;
@@ -87,20 +116,14 @@ h3 {
 
 .layout {
   display: grid;
-  grid-template-columns: max-content auto;
+  grid-template-columns: max-content auto max-content;
   border: 2px red solid;
 
 }
 
 .header {
   min-height: 150px;
-  background-color: rgb(87, 18, 2);
-  border: 2px red solid;
-}
-
-.footer {
-  min-height: 150px;
-  background-color: rgb(87, 18, 2);
+  /* background-color: rgb(87, 18, 2); */
   border: 2px red solid;
 }
 
@@ -122,10 +145,26 @@ h3 {
   display: flex;
   flex-direction: column;
   align-items: center;
-
 }
 
-.sidebar_list {
+.rightsidebar {
+  grid-column: 3 / 4;
+  background-color: #485003;
+  opacity: .85;
+  font-size: calc(10px + 2vmin);
+  letter-spacing: 1px;
+  color: white;
+  min-height: 700px;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  padding-left: 8px;
+  padding-right: 8px;
+  min-width: 200px;
+  max-width: max-content;
+}
+
+/* .sidebar_list {
   font-size: small;
   background-color: darkgoldenrod;
   border: 4px solid black;
@@ -135,17 +174,15 @@ h3 {
   text-align: center;
   padding: 1px;
   margin: 1px auto;
-}
+} */
 
-.container {
-  /* width: 600px; */
-}
-
+/* Sidebar */
 #sidebar {
   background-color: #485003;
   opacity: .85;
   font-size: calc(10px + 2vmin);
-  color: lightgrey;
+  letter-spacing: 1px;
+  color: white;
   grid-column: 1 / 2;
   min-height: 700px;
   border: 2px red solid;
@@ -158,35 +195,19 @@ h3 {
   max-width: max-content;
 }
 
-#featurecard {
-  list-style-type: none;
-  min-width: 500px;
-  max-width: 500px;
-  background-color: #485003;
-  opacity: .85;
-  color: lightgray;
-  margin-left: 0;
-}
-
-#carousel {
-  border: 2px red solid;
-  max-width: 350px;
-  max-height: 350px;
-}
-
 #table {
   display: grid;
   grid-template-rows: 25px auto;
   font-size: 36px;
+  letter-spacing: 1px;
   border: 2px solid lightgray;
   max-width:fit-content;
-  color: lightgray;
-  vertical-align: middle;
+  color: white;
 }
 
 #viewbutton {
   max-height: 20px;
-  font-size: 8px;
+  font-size: 10px;
   width: 60px;
   color: white;
   text-align: center;
@@ -200,6 +221,28 @@ h3 {
 #secondcol {
   grid-row: 2 / 3;
   font-size: 12px;
+}
+
+/* Carousel */
+#carousel {
+  border: 2px red solid;
+  min-height: max-content;
+  min-width: 750px;
+  max-width: 800px;
+  max-height: max-content;
+  font-size: 24px;
+  text-shadow: 2px 2px black;
+}
+
+/* Character View */
+#featurecard {
+  list-style-type: none;
+  min-width: 500px;
+  max-width: 700px;
+  background-color: #485003;
+  opacity: .85;
+  color: whitesmoke;
+  margin-left: 0;
 }
 
 #table2 {
@@ -223,120 +266,16 @@ h3 {
   vertical-align: middle;
 }
 
-#results {
-
-}
-
-#buttons {
-
-
-}
-
-
-/* Scrolling Banner*/
-  
 #BannerContainer {
-  width: auto;
+  width: 100%;
   height: 150px;
   overflow: hidden;
   background: white;
-  margin-top: auto;
-  margin-bottom: auto;
-  padding: 0%;
 }
 
 #BannerContainer img {
   width: auto;
   height: 130px;
-  padding: 10px;
+  padding: auto;
+  position: relative;
 }
-<<<<<<< HEAD:dndclient/src/App.css
-.PhotoBanner {
-  height: 100px;
-  width: 3550px;
-=======
-
-/* keyframe animations
-.FirstPhoto {
-  -webkit-animation: bannermove 30s linear infinite;
-    -moz-animation: bannermove 30s linear infinite;
-      -ms-animation: bannermove 30s linear infinite;
-        -o-animation: bannermove 30s linear infinite;
-          animation: bannermove 30s linear infinite;
-} */
-  
-/* @keyframes "bannermove" {
-  0% {
-  margin-left: 0px;
-  }
-  100% {
-    margin-left: -2125px;
-  }
-  
-}
-  
-@-moz-keyframes bannermove {
-  0% {
-    margin-left: 0px;
-  }
-  100% {
-    margin-left: -2125px;
-  }
-  
->>>>>>> d1597529c1c7337ab05390d40ff45dee8a1adee2:src/App.css
-}
-
-/* logo-slider {
-  $min-image-size: 50px;
-  $max-image-size: 100px;
-  
-  --image-size: #{$max-image-size};
-  
-  border: 1px solid #575757;
-  padding: 20px;
-  overflow: hidden;
-  max-width: 900px;
-  width: 100%;
-  margin: 0 auto;	
-	position: relative;
-	display: flex;
-	
-	div { 
-		display: flex;
-		position: relative;
-		animation: marquee 5s linear infinite;
-    justify-content: space-around;
-	}
-		
-	img {
-		display: block;
-		min-width: var(--image-size);
-		height: var(--image-size);
-		margin: 0 1vw;
-	}
-  
-  &:after {
-		content: "";
-		position: absolute;
-		width: 100%;
-		height: 100%;
-		left: 0;
-		top: 0;
-		background: linear-gradient(to right, white, rgba(white, 0) 80px, rgba(white, 0) calc(100% - 80px), white);
-	}
-  
-  @media (max-width:900px) {
-    --image-size: #{$min-image-size};
-    --image-size: min(max(#{$min-image-size}, 10vw), #{$max-image-size});
-	}
-
-}
-<<<<<<< HEAD:dndclient/src/App.css
-
-@keyframes marquee {
-	0%   { transform: translateX(0%); }
-	100% { transform: translateX(-100%); }
-=======
-  
->>>>>>> d1597529c1c7337ab05390d40ff45dee8a1adee2:src/App.css
-} */

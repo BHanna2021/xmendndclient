@@ -8,6 +8,7 @@ const Sidebar = (props) => {
     const [characters, setCharacters] = useState([]);
     const [updateActive, setUpdateActive] = useState(false);
 
+
     const fetchCharacters = () => {
         fetch(`${APIURL}/character/mine`, {
             method: 'GET',
@@ -61,7 +62,7 @@ const Sidebar = (props) => {
                 </ul>
                 <Nav className="ml-auto" navbar>
                     <NavItem id="button">
-                        <Button onClick={props.clickLogout}>Logout</Button>
+                        <Button style={{backgroundColor: "midnightblue", fontSize: "65%", letterSpacing: "1px"}} onClick={props.clickLogout}>Logout</Button>
                     </NavItem>
                 </Nav>
                 <br/>
@@ -69,7 +70,6 @@ const Sidebar = (props) => {
             <Container>
 
                         <CharacterTable characters={characters} displayCharacter={displayCharacter} fetchCharacters={fetchCharacters} token={props.token} />
-                        {/* <ViewCharacter characters={characters} displayCharacter={displayCharacter} fetchCharacters={fetchCharacters} token={props.token} /> */}
                     {updateActive ? <ViewCharacter characters={characters} characterToView={props.characterToView} setCharactersToView={props.setCharacterToView} updateOff={updateOff} token={props.token} updateOn={updateOn} fetchCharacters={fetchCharacters} /> : <></>}
 
             </Container>

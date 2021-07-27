@@ -8,6 +8,8 @@ import {
     Modal,
     ModalHeader,
     ModalBody,
+    Row,
+    Col
 } from "reactstrap";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import APIURL from '../../helpers/environment';
@@ -17,6 +19,7 @@ const CreateUser = (props) => {
     const [password, setPassword] = useState("");
     const [handle, setHandle] = useState("");
     const [modalOpen, setModalOpen] = useState(true);
+    const [userId, setUserId] = useState('');
 
     let handleSubmit = (event) => {
         event.preventDefault();
@@ -35,8 +38,9 @@ const CreateUser = (props) => {
                 (response) => response.json()
             )
             .then((data) => {
-                console.log(data.sessionToken);
                 props.updateToken(data.sessionToken);
+                setUserId(data.id);
+                console.log(userId);
             })
 
     };
@@ -49,10 +53,10 @@ const CreateUser = (props) => {
     return (
         <div>
             <Modal isOpen={modalOpen}>
-                <ModalHeader>
-                    <h1>Signup</h1>
+                <ModalHeader style={{backgroundColor: "wheat"}}>
+                    <h2 style={{color: "indigo"}}>Who goes there?</h2>
                 </ModalHeader>
-                <ModalBody>
+                <ModalBody style={{backgroundColor: "antiquewhite"}}>
                     <Form onSubmit={handleSubmit}>
                         <FormGroup>
                             <Label htmlFor="email">Email Address</Label>
@@ -60,18 +64,22 @@ const CreateUser = (props) => {
                                 onChange={(e) => setEmail(e.target.value)}
                                 name="email"
                                 value={email}
+                                type="email"
                                 required
                             />
                         </FormGroup>
+                        <br/>
                         <FormGroup>
                             <Label htmlFor="password">Password</Label>
                             <Input
                                 onChange={(e) => setPassword(e.target.value)}
                                 name="password"
                                 value={password}
+                                type="password"
                                 required
                             />
                         </FormGroup>
+                        <br/>
                         <FormGroup>
                             <Label htmlFor="handle">DnD handle</Label>
                             <Input
@@ -80,8 +88,16 @@ const CreateUser = (props) => {
                                 value={handle}
                             />
                         </FormGroup>
-                        <Button type="submit">Signup</Button>
-                        <Button onClick={closeModal}>Cancel</Button>
+                        <br/>
+                        <Row>
+                            <Col md="3">
+                                <Button style={{backgroundColor: "darkblue", fontSize: "110%"}} type="submit">Join Us</Button>
+                            </Col>
+                            <Col md="2">
+                                <Button style={{backgroundColor: "darkslateblue", fontSize: "110%"}} onClick={closeModal}>Cancel</Button>
+                            </Col>
+                        </Row>
+                        
                     </Form>
                 </ModalBody>
             </Modal>

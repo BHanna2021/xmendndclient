@@ -246,115 +246,17 @@ h3 {
   vertical-align: middle;
 }
 
-#results {
 
-}
-
-#buttons {
-
-
-}
-
-
-/* Scrolling Banner*/
-  
 #BannerContainer {
-  width: auto;
+  width: 100%;
   height: 150px;
   overflow: hidden;
   background: white;
-  margin-top: auto;
-  margin-bottom: auto;
-  padding: 0%;
 }
 
 #BannerContainer img {
   width: auto;
   height: 130px;
-  padding: 10px;
+  padding: auto;
+  position: relative;
 }
-.PhotoBanner {
-  height: 100px;
-  width: 3550px;
-}
-
-/* keyframe animations
-.FirstPhoto {
-  -webkit-animation: bannermove 30s linear infinite;
-    -moz-animation: bannermove 30s linear infinite;
-      -ms-animation: bannermove 30s linear infinite;
-        -o-animation: bannermove 30s linear infinite;
-          animation: bannermove 30s linear infinite;
-} */
-  
-/* @keyframes "bannermove" {
-  0% {
-  margin-left: 0px;
-  }
-  100% {
-    margin-left: -2125px;
-  }
-  
-}
-  
-@-moz-keyframes bannermove {
-  0% {
-    margin-left: 0px;
-  }
-  100% {
-    margin-left: -2125px;
-  }
-  
-}
-
-/* logo-slider {
-  $min-image-size: 50px;
-  $max-image-size: 100px;
-  
-  --image-size: #{$max-image-size};
-  
-  border: 1px solid #575757;
-  padding: 20px;
-  overflow: hidden;
-  max-width: 900px;
-  width: 100%;
-  margin: 0 auto;	
-	position: relative;
-	display: flex;
-	
-	div { 
-		display: flex;
-		position: relative;
-		animation: marquee 5s linear infinite;
-    justify-content: space-around;
-	}
-		
-	img {
-		display: block;
-		min-width: var(--image-size);
-		height: var(--image-size);
-		margin: 0 1vw;
-	}
-  
-  &:after {
-		content: "";
-		position: absolute;
-		width: 100%;
-		height: 100%;
-		left: 0;
-		top: 0;
-		background: linear-gradient(to right, white, rgba(white, 0) 80px, rgba(white, 0) calc(100% - 80px), white);
-	}
-  
-  @media (max-width:900px) {
-    --image-size: #{$min-image-size};
-    --image-size: min(max(#{$min-image-size}, 10vw), #{$max-image-size});
-	}
-
-}
-
-@keyframes marquee {
-	0%   { transform: translateX(0%); }
-	100% { transform: translateX(-100%); }
-  
-} */

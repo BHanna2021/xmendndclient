@@ -21,14 +21,13 @@ const Auth = (props) => {
                     <LoginUser updateToken={props.updateToken} />
                 </Col>
                 <Col md="2">
-                    <Button className="signUp" style={{backgroundColor: "darkblue", fontSize: "110%"}} type="button" onClick={toggleCreateUserOn}>Sign Up</Button>
-                    {createActiveUser ? <CreateUser toggleCreateUserOff={toggleCreateUserOff} 
-                updateToken={props.updateToken}
-                /> : <></>}
+                    <Button className="signUp" style={{ backgroundColor: "darkblue", fontSize: "110%" }} type="button" onClick={toggleCreateUserOn}>Sign Up</Button>
+                    {createActiveUser ? <CreateUser toggleCreateUserOff={toggleCreateUserOff}
+                        updateToken={props.updateToken}
+                    /> : <></>}
                 </Col>
             </Row>
             <Row>
-
             </Row>
         </Container>
     )

@@ -5,6 +5,7 @@ import { Carousel } from 'reactstrap';
 
 const CharacterCarousel = () => {
     return (
+        <div id="carousel">
         <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-indicators">
                 <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -15,10 +16,11 @@ const CharacterCarousel = () => {
                 <div class="carousel-item active">
                     <img src="Carouselbackground1.jpg" class="d-block w-100" alt="..."></img>
                         <div class="carousel-caption d-none d-md-block">
-                            <h4>Creating A Character</h4>
-                            <h5>First: Select Your Race and Class</h5>
-                            <p>Some representative placeholder content for the first slide.</p>
-                            <p>Some representative placeholder content for the first slide.</p>
+                            <h3>Creating Your Character</h3>
+                            <hr/>
+                            <h5>Select Your Race and Class</h5>
+                            <p>Dwarves, elves, halflings and humans are the most common character races. Special traits and senses are granted to your character based on the race you choose.</p>
+                            <p>Your class is your character's vocation.  Your character is granted special talents based on the class you choose.</p>
                         </div>
             </div>
                     <div class="carousel-item ">
@@ -45,6 +47,8 @@ const CharacterCarousel = () => {
                             <span class="visually-hidden">Next</span>
                         </button>
                     </div>
+        </div>
+
                     )
 }
 

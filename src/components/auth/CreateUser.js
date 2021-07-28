@@ -50,10 +50,10 @@ const CreateUser = (props) => {
     return (
         <div>
             <Modal isOpen={modalOpen}>
-                <ModalHeader style={{backgroundColor: "wheat"}}>
-                    <h2 style={{color: "indigo"}}>Who goes there?</h2>
+                <ModalHeader style={{ backgroundColor: "wheat" }}>
+                    <h2 style={{ color: "indigo" }}>Who goes there?</h2>
                 </ModalHeader>
-                <ModalBody style={{backgroundColor: "antiquewhite"}}>
+                <ModalBody style={{ backgroundColor: "antiquewhite" }}>
                     <Form onSubmit={handleSubmit}>
                         <FormGroup>
                             <Label htmlFor="email">Email Address</Label>
@@ -65,7 +65,7 @@ const CreateUser = (props) => {
                                 required
                             />
                         </FormGroup>
-                        <br/>
+                        <br />
                         <FormGroup>
                             <Label htmlFor="password">Password</Label>
                             <Input
@@ -76,7 +76,7 @@ const CreateUser = (props) => {
                                 required
                             />
                         </FormGroup>
-                        <br/>
+                        <br />
                         <FormGroup>
                             <Label htmlFor="handle">DnD handle</Label>
                             <Input
@@ -85,16 +85,16 @@ const CreateUser = (props) => {
                                 value={handle}
                             />
                         </FormGroup>
-                        <br/>
+                        <br />
                         <Row>
                             <Col md="3">
-                                <Button style={{backgroundColor: "darkblue", fontSize: "110%"}} type="submit">Join Us</Button>
+                                <Button style={{ backgroundColor: "darkblue", fontSize: "110%" }} type="submit">Join Us</Button>
                             </Col>
                             <Col md="3">
-                                <Button style={{backgroundColor: "darkslateblue", fontSize: "110%"}} onClick={closeModal}>Cancel</Button>
+                                <Button style={{ backgroundColor: "darkslateblue", fontSize: "110%" }} onClick={closeModal}>Cancel</Button>
                             </Col>
                         </Row>
-                        
+
                     </Form>
                 </ModalBody>
             </Modal>

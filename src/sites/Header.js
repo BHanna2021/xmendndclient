@@ -2,7 +2,7 @@ import React from 'react';
 
 const ScrollingBanner = () => {
     return (
-        <div id="BannerContainer" style={{backgroundColor: "black"}}>
+        <div id="BannerContainer" style={{ backgroundColor: "black" }}>
             <logo-slider>
                 <div>
                     <img src="./assets/DMToken" alt="" />

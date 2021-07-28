@@ -36,7 +36,6 @@ grid-gap: 20px;
 
 export const FooterLink = styled.a`
 color: #fff;
-// margin-bottom: 20px;
 font-size: 18px;
 text-decoration: none;
 
@@ -49,6 +48,5 @@ text-decoration: none;
 export const Heading = styled.p`
 font-size: 24px;
 color: #fff;
-// margin-bottom: 40px;
 font-weight: bold;
 `;

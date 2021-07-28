@@ -1,6 +1,15 @@
 import React, { useState } from "react";
-import { Form, FormGroup, Label, Input, Button } from "reactstrap";
-import { Container,} from "reactstrap";
+import {
+    Form,
+    FormGroup,
+    Label, 
+    Input,
+    Button,
+    Col,
+    Row,
+    Container
+} from "reactstrap";
+
 import APIURL from '../../helpers/environment';
 
 const LoginUser = (props) => {
@@ -61,7 +70,14 @@ const LoginUser = (props) => {
                             />
                         </FormGroup>
                         <br/>
-                        <Button style={{backgroundColor: "darkblue", fontSize: "110%"}} type="submit">Login</Button>
+                        <Row>
+                            <Col md={3}>
+                                <Button style={{backgroundColor: "darkblue", fontSize: "110%"}} type="submit">Login</Button>
+                            </Col>
+                            <Col md={3}>
+                                <Button style={{ backgroundColor: "darkblue", fontSize: "110%" }} type="button" onClick={props.toggleCreateUserOn}>Sign Up</Button>
+                            </Col>
+                        </Row>
                     </Form>
                 </div>
             </Container>

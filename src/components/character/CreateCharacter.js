@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import {Button,
         Form,
         FormGroup,
@@ -10,8 +10,7 @@ import {Button,
         ButtonToggle,
         Modal,
         ModalHeader,
-        ModalBody,
-        ModalFooter
+        ModalBody
     } from 'reactstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import APIURL from '../../helpers/environment';
@@ -58,7 +57,7 @@ const CharacterCreator = (props) => {
                 'Authorization': `Bearer ${props.token}`
             })
         }).then((res) => res.json())
-        .then((charData) => {console.log(charData);
+        .then((charData) => {
             setName('');
             setRace('');
             setAlignment('');

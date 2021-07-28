@@ -23,7 +23,7 @@ const Footer = () => {
                     </Column>
                     <Column>
                         <Heading>Disclaimer</Heading>
-                        <FooterLink style={{ fontSize: 13 }} href="https://creativecommons.org/licenses/by-sa/3.0/" target="_blank" > Unless otherwise stated, the content of this page is licensed under Creative Commons Attribution-ShareAlike 3.0 License </FooterLink>
+                        <FooterLink style={{ fontSize: 12 }} href="https://creativecommons.org/licenses/by-sa/3.0/" target="_blank" > Unless otherwise stated, the content of this page is licensed under Creative Commons Attribution-ShareAlike 3.0 License </FooterLink>
                     </Column>
                     <Column>
                         <Heading>Resources</Heading>

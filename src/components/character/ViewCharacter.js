@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from 'react';
-import { Button, CardImg } from 'reactstrap';
+import React, { useState } from 'react';
 import EditCharacter from './CharacterEdit';
 import APIURL from '../../helpers/environment';
 
@@ -30,16 +29,13 @@ const ViewCharacter = (props) => {
     return (
         <div className='character_view'>
             <div id="featurecard" class="card text-center col-md-6 offset-md-1">
-                {/* <CardImg top width="100%" src="Image1.jpg" alt=" " /> */}
                 <div class="card-header">
                     {props.characterToView.race}/{props.characterToView.char_class}
-
                 </div>
                 <div class="card-body">
                     <h2 class="card-title">{props.characterToView.name}</h2>
-                    {/* <p class="card-text">With supporting text below as a natural lead-in to additional content.</p> */}
                     <div className='characterinfo'>
-                        <table scope="col" id="table2">
+                        <table  id="table2">
                         <div id="col1">
                             <tr>
                                     <th style={{letterSpacing: "1.5px", fontSize: "115%"}}>Race: {props.characterToView.race}</th>
@@ -56,9 +52,9 @@ const ViewCharacter = (props) => {
                                 <tr>
                                     <th style={{letterSpacing: "1.5px", fontSize: "115%"}}>Level:  {props.characterToView.level}</th>
                                 </tr>
-                                {/* <tr>
-                                    <th style={{letterSpacing: "1.5px", fontSize: "115%"}}>HP:  {props.characterToView.hp}</th>
-                                </tr> */}
+                                <tr>
+                                    <th style={{letterSpacing: "1.5px", fontSize: "115%"}}>HP:  {props.characterToView.hit_points}</th>
+                                </tr>
                                 <hr/>
                                 <div class="d-grid gap-2 col-8 mx-auto">
                                     <button style={{backgroundColor: "indigo", borderRadius: "15px", letterSpacing: "1.5px", fontSize: "105%"}} class="btn btn-secondary btn-block" type="button" onClick={editOn}>Update</button>
@@ -81,9 +77,9 @@ const ViewCharacter = (props) => {
                                 <tr>
                                     <th style={{letterSpacing: "1.5px", fontSize: "115%"}}>Weight: {props.characterToView.weight}</th>
                                 </tr>
-                                {/* <tr>
+                                <tr>
                                     <th style={{letterSpacing: "1.5px", fontSize: "115%"}}>Session Notes: {props.characterToView.session_notes}</th>
-                                </tr> */}
+                                </tr>
                                 <hr/>
                                 <div class="d-grid gap-2 col-8 mx-auto">
                                     <button style={{backgroundColor: "midnightblue", borderRadius: "15px", letterSpacing: "1.5px", fontSize: "105%"}} class="btn btn-secondary btn-block" type="button" onClick={() => {deleteCharacter(props.characterToView)}}>Delete</button>

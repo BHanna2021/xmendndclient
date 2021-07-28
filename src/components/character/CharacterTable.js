@@ -7,15 +7,12 @@ const CharacterTable = (props) => {
         return props.characters.map((character, index) => {
             return(
                 <tr key={index}>
-                    
                     <th scope="row">{character.id}</th>
                     <td>{character.name}</td>
                     <td>{character.char_class}</td>
                     <td>{character.race}</td>
                     <td>
-
                         <Button id="viewbutton"  class="btn btn-link" onClick={() => {props.displayCharacter(character)}}>View</Button>
-
                     </td>
                 </tr>
             )
@@ -33,7 +30,6 @@ const CharacterTable = (props) => {
                     <th>Name | </th>
                     <th>Class | </th>
                     <th>Race |</th>
-                    {/* <th>View Char?</th> */}
                 </tr>
             </thead>
             <tbody id="secondcol">

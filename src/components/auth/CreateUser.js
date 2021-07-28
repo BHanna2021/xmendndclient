@@ -19,7 +19,6 @@ const CreateUser = (props) => {
     const [password, setPassword] = useState("");
     const [handle, setHandle] = useState("");
     const [modalOpen, setModalOpen] = useState(true);
-    const [userId, setUserId] = useState('');
 
     let handleSubmit = (event) => {
         event.preventDefault();
@@ -39,8 +38,6 @@ const CreateUser = (props) => {
             )
             .then((data) => {
                 props.updateToken(data.sessionToken);
-                setUserId(data.id);
-                console.log(userId);
             })
 
     };

@@ -223,7 +223,6 @@ h3 {
   font-size: 12px;
 }
 
-/* Carousel */
 #carousel {
   border: 2px red solid;
   min-height: max-content;
@@ -276,6 +275,12 @@ h3 {
 #BannerContainer img {
   width: auto;
   height: 130px;
+  padding: 10px;
+}
+
+.PhotoBanner {
+  height: 100px;
+  width: 3550px;
   padding: auto;
   position: relative;
 }

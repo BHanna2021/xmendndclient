@@ -38,7 +38,6 @@ const CharacterIndex = (props) => {
         }).then((res) => res.json())
             .then((logData) => {
                 setCharacters(logData)
-                console.log(logData)
             })
     }
 
@@ -52,9 +51,9 @@ const CharacterIndex = (props) => {
                     <Sidebar clickLogout={clearToken} token={props.token} setCharacterToView={setCharacterToView} characters={characters} />
                 </nav>
                 <div className='content'>
-                    <h1 style={{ color: 'yellow'}}>Adventure Awaits!</h1>
+                    <h1 style={{ color: 'yellow' }}>Adventure Awaits!</h1>
                     <div class="d-grid gap-2 col-6 mx-auto">
-                        <button style={{backgroundColor: "darkblue", fontSize: "200%", letterSpacing: "1px", borderRadius: "10px"}} class="btn btn-secondary btn-block" type="button" onClick={toggleCreateOn}>
+                        <button style={{ backgroundColor: "darkblue", fontSize: "200%", letterSpacing: "1px", borderRadius: "10px" }} class="btn btn-secondary btn-block" type="button" onClick={toggleCreateOn}>
                             Create a Character
                         </button>
                         {createActive ? <CharacterCreator toggleCreateOff={toggleCreateOff} token={props.token} /> : <></>}

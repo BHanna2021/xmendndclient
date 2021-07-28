@@ -93,7 +93,7 @@ const CreateUser = (props) => {
                             <Col md="3">
                                 <Button style={{backgroundColor: "darkblue", fontSize: "110%"}} type="submit">Join Us</Button>
                             </Col>
-                            <Col md="2">
+                            <Col md="3">
                                 <Button style={{backgroundColor: "darkslateblue", fontSize: "110%"}} onClick={closeModal}>Cancel</Button>
                             </Col>
                         </Row>

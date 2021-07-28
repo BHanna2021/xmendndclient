@@ -20,11 +20,6 @@ function App() {
     console.log(sessionToken);
   }
 
-  const clearToken = () => {
-    localStorage.clear();
-    setSessionToken('');
-  }
-
   const protectedViews = () => {
     return (
       sessionToken === localStorage.getItem('token') ? <CharacterIndex token={sessionToken} /> : <Auth updateToken={updateToken} />

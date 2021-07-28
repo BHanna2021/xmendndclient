@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Form, FormGroup, Label, Input, Button } from "reactstrap";
 import { Container,} from "reactstrap";
 import APIURL from '../../helpers/environment';
@@ -6,8 +6,7 @@ import APIURL from '../../helpers/environment';
 const LoginUser = (props) => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
-    const [userId, setUserId] = useState("");
-    const [handle, setHandle] = useState("");
+
 
     let handleSubmit = (event) => {
         event.preventDefault();
@@ -26,7 +25,6 @@ const LoginUser = (props) => {
             )
             .then((data) => {
                 props.updateToken(data.sessionToken);
-                setUserId(data.user.id)
             })
     }
 

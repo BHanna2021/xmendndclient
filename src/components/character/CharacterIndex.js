@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { } from 'reactstrap';
 import Sidebar from '../../sites/Sidebar';
 import CharacterCreator from './CreateCharacter';
@@ -11,43 +11,12 @@ import RightSidebar from '../../sites/RightSidebar';
 
 const CharacterIndex = (props) => {
     const [characters, setCharacters] = useState([]);
-    const [characterToView, setCharacterToView] = useState({});
+    const [characterToView, setCharacterToView] = useState(null);
 
-    const [sessionToken, setSessionToken] = useState('');
     const [createActive, setCreateActive] = useState(false);
-
-    // const [userHandle, setUserHandle] = useState('');
-    // const [userCreated, setUserCreated] = useState('');
-    // const [memberSince, setMemberSince] = useState('');
-
-    useEffect(() => {
-        if (localStorage.getItem('token')) {
-            setSessionToken(localStorage.getItem('token'));
-        }
-    }, [])
-
-    // const fetchUserData = () => {
-    //     console.log(props.id)
-    //     fetch(`${APIURL}/${props.id}`, {
-    //         method: 'GET',
-    //         headers: new Headers ({
-    //             'Content-Type': 'application/json'
-    //         })
-    //     }) .then((res) => res.json())
-    //     .then((userData) => {
-    //         setUserHandle(userData.handle);
-    //         setUserCreated(userData.createdAt)
-    //     .then(calculateMemberTime)
-    //     })
-    // }
-
-    // const calculateMemberTime = (userCreated) => {
-    //     setMemberSince(userCreated.split(' ')[0]);
-    // }
 
     const clearToken = () => {
         localStorage.clear();
-        setSessionToken('');
         window.location = "/"
     }
 
@@ -72,18 +41,6 @@ const CharacterIndex = (props) => {
                 console.log(logData)
             })
     }
-    useEffect(() => {
-        // fetchCharacters();
-        // fetchUserData();
-    }, [])
-
-    function Display(props) {
-        const displayCharacter = props.displayCharacter;
-        if (displayCharacter) {
-            return <ViewCharacter />
-        }
-        return <CharacterCarousel />
-    }
 
     return (
         <div className='index'>
@@ -93,10 +50,9 @@ const CharacterIndex = (props) => {
             <div className='layout' >
                 <nav>
                     <Sidebar clickLogout={clearToken} token={props.token} setCharacterToView={setCharacterToView} characters={characters} />
-                    {/* <Sidebar clickLogout={clearToken} userHandle={userHandle} token={props.token} setCharacterToView={setCharacterToView} characters={characters} /> */}
                 </nav>
                 <div className='content'>
-                    <h1 style={{ color: 'yellow'}}>Perilous Journey? Rewarding Escapade!</h1>
+                    <h1 style={{ color: 'yellow'}}>Adventure Awaits!</h1>
                     <div class="d-grid gap-2 col-6 mx-auto">
                         <button style={{backgroundColor: "darkblue", fontSize: "200%", letterSpacing: "1px", borderRadius: "10px"}} class="btn btn-secondary btn-block" type="button" onClick={toggleCreateOn}>
                             Create a Character
@@ -104,9 +60,8 @@ const CharacterIndex = (props) => {
                         {createActive ? <CharacterCreator toggleCreateOff={toggleCreateOff} token={props.token} /> : <></>}
                     </div>
                     <br />
-                    <CharacterCarousel characters={characters} fetchCharacters={fetchCharacters} token={props.token} />
-                    {/* <Display displayCharacter={false} /> */}
-                    <ViewCharacter characters={characters} characterToView={characterToView} fetchCharacters={fetchCharacters} token={props.token} />
+                    {characterToView === null ? <CharacterCarousel characters={characters} fetchCharacters={fetchCharacters} token={props.token} />
+                        : <ViewCharacter characters={characters} characterToView={characterToView} fetchCharacters={fetchCharacters} token={props.token} />}
                 </div>
                 <div className="rightsidebar">
                     <RightSidebar />
@@ -117,9 +72,6 @@ const CharacterIndex = (props) => {
             </div>
         </div>
     )
-
-
-
 }
 
 export default CharacterIndex;

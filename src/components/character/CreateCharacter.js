@@ -153,7 +153,7 @@ const CharacterCreator = (props) => {
                             <Col md={4}>
                                 <FormGroup>
                                     <Label htmlFor="weight">Weight (lbs): </Label>
-                                    <Input type="number" name="weight" value={weight} onChange={(e) => setWeight(e.target.value)} />
+                                    <Input type="number" min="0" name="weight" value={weight} onChange={(e) => setWeight(e.target.value)} />
                                 </FormGroup>
                             </Col>
                             <Col md={4}>
@@ -264,11 +264,11 @@ const CharacterCreator = (props) => {
                         <Row>
                             <Col md={4}>
                                 <Label for="HP">HP: </Label>
-                                <Input type="number" name="HP" value={hitPoints} onChange={(e) => setHitPoints(e.target.value)} />
+                                <Input type="number" min="0" name="HP" value={hitPoints} onChange={(e) => setHitPoints(e.target.value)} />
                             </Col>
                             <Col md={4}>
                                 <Label for="level">Level: </Label>
-                                <Input type="number" name="level" max="20" value={level} onChange={(e) => setLevel(e.target.value)} />
+                                <Input type="number" min="0" name="level" max="20" value={level} onChange={(e) => setLevel(e.target.value)} />
                             </Col>
                             <Col md={4}>
                                 <Label for="experience">Experience: </Label>

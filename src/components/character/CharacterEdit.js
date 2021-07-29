@@ -141,7 +141,7 @@ const EditCharacter = (props) => {
                             <Col md={6}>
                                 <FormGroup>
                                     <Label htmlFor="weight">Weight (lbs): </Label>
-                                    <Input size="sm" type="number" name="weight" value={editWeight} onChange={(e) => setEditWeight(e.target.value)} />
+                                    <Input size="sm" min="0" type="number" name="weight" value={editWeight} onChange={(e) => setEditWeight(e.target.value)} />
                                 </FormGroup>
                             </Col>
                             <Col md={3}>
@@ -256,11 +256,11 @@ const EditCharacter = (props) => {
                         <Row>
                             <Col md={4}>
                                 <Label for="HP">HP: </Label>
-                                <Input type="number" name="HP" value={editHitPoints} onChange={(e) => setEditHitPoints(e.target.value)} />
+                                <Input type="number" min="0" name="HP" value={editHitPoints} onChange={(e) => setEditHitPoints(e.target.value)} />
                             </Col>
                             <Col md={4}>
                                 <Label for="level">Level: </Label>
-                                <Input type="number" name="level" max="20" value={editLevel} onChange={(e) => setEditLevel(e.target.value)} />
+                                <Input type="number" min="0" name="level" max="20" value={editLevel} onChange={(e) => setEditLevel(e.target.value)} />
                             </Col>
                             <Col md={4}>
                                 <Label for="experience">Experience: </Label>

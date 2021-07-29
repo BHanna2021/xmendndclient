@@ -21,6 +21,16 @@ const CharacterCarousel = () => {
                             <p>Your class is your character's vocation.  Your character is granted special talents based on the class you choose.</p>
                         </div>
                     </div>
+<<<<<<< HEAD
+                    <div class="carousel-item">
+                        <img src="Carouselbackground2.jpg" class="d-block w-100" alt="..."></img>
+                            <div class="carousel-caption d-none d-md-block">
+                                <h3>Determine Your Abilities</h3>
+                                <hr/>
+                                <p>Your character's potential relies on ability scores.</p>
+                                <p>Strength measures physical power. Dexterity measures agility. Constitution measures endurance. Intelligence measures reasoning and memory. Wisdom measures perception and insight. Charisma measures the force of your personality.</p>
+                            </div>
+=======
                     <div class="carousel-item active">
                         <img src="./assets/Carouselbackground2.jpg" class="d-block w-100" alt="..."></img>
                         <div class="carousel-caption d-none d-md-block">
@@ -29,6 +39,7 @@ const CharacterCarousel = () => {
                             <p>Your character's potential relies on ability scores.</p>
                             <p>Strength measures physical power. Dexterity measures agility. Constitution measures endurance. Intelligence measures reasoning and memory. Wisdom measures perception and insight. Charisma measures the force of your personality.</p>
                         </div>
+>>>>>>> 3571dcd18a66dfb5c92f9e7cd2ec7ef880e1b79d
                     </div>
                     <div class="carousel-item">
                         <img src="./assets/Carouselbackground1.jpg" class="d-block w-100" alt="..."></img>

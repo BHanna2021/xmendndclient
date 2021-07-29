@@ -21,8 +21,10 @@ const CharacterCarousel = () => {
                             <p>Your class is your character's vocation.  Your character is granted special talents based on the class you choose.</p>
                         </div>
                     </div>
+
                     <div class="carousel-item">
                         <img src="carouselbackground2.jpg" class="d-block w-100" alt="..."></img>
+
                         <div class="carousel-caption d-none d-md-block">
                             <h3>Determine Your Abilities</h3>
                             <hr />

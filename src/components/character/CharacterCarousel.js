@@ -12,7 +12,7 @@ const CharacterCarousel = () => {
                 </div>
                 <div class="carousel-inner">
                     <div class="carousel-item active">
-                        <img src="./assets/Carouselbackground3.jpg" class="d-block w-100" alt="..."></img>
+                        <img src="Carouselbackground3.jpg" class="d-block w-100" alt="..."></img>
                         <div class="carousel-caption d-none d-md-block">
                             <h3>Creating Your Character</h3>
                             <hr />
@@ -21,8 +21,8 @@ const CharacterCarousel = () => {
                             <p>Your class is your character's vocation.  Your character is granted special talents based on the class you choose.</p>
                         </div>
                     </div>
-                    <div class="carousel-item active">
-                        <img src="./assets/Carouselbackground2.jpg" class="d-block w-100" alt="..."></img>
+                    <div class="carousel-item">
+                        <img src="Carouselbackground2.jpg" class="d-block w-100" alt="..."></img>
                         <div class="carousel-caption d-none d-md-block">
                             <h3>Determine Your Abilities</h3>
                             <hr />
@@ -31,7 +31,7 @@ const CharacterCarousel = () => {
                         </div>
                     </div>
                     <div class="carousel-item">
-                        <img src="./assets/Carouselbackground1.jpg" class="d-block w-100" alt="..."></img>
+                        <img src="Carouselbackground1.jpg" class="d-block w-100" alt="..."></img>
                         <div class="carousel-caption d-none d-md-block">
                             <h3>Create a Background for Your Character</h3>
                             <hr />
@@ -40,7 +40,7 @@ const CharacterCarousel = () => {
                         </div>
                     </div>
                     <div class="carousel-item">
-                        <img src="./assets/Carouselbackground4.jpg" class="d-block w-100" alt="..."></img>
+                        <img src="Carouselbackground4.jpg" class="d-block w-100" alt="..."></img>
                         <div class="carousel-caption d-none d-md-block">
                             <h3>Equip Your Character</h3>
                             <hr />

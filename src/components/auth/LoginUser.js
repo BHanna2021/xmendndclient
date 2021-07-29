@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import {
     Form,
     FormGroup,
-    Label, 
+    Label,
     Input,
     Button,
     Col,
@@ -20,7 +20,6 @@ const LoginUser = (props) => {
     let handleSubmit = (event) => {
         event.preventDefault();
         fetch(`${APIURL}/user/login`, {
-
             method: "POST",
             body: JSON.stringify({
                 user: { email: email, password: password },
@@ -41,10 +40,10 @@ const LoginUser = (props) => {
         <div>
             <Container className="auth-container">
                 <div>
-                    <h1 style={{color: "indigo"}}>Adventure Awaits</h1>
+                    <h1 style={{ color: "indigo" }}>Adventure Awaits</h1>
                 </div>
                 <div>
-                    <h3 style={{fontSize: "175%"}}>Login Here:</h3>
+                    <h3 style={{ fontSize: "175%" }}>Login Here:</h3>
                     <Form onSubmit={handleSubmit}>
                         <FormGroup>
                             <Label htmlFor="email">Email Address</Label>
@@ -57,7 +56,7 @@ const LoginUser = (props) => {
                                 required
                             />
                         </FormGroup>
-                        <br/>
+                        <br />
                         <FormGroup>
                             <Label htmlFor="password">Password</Label>
                             <Input
@@ -69,10 +68,10 @@ const LoginUser = (props) => {
                                 required
                             />
                         </FormGroup>
-                        <br/>
+                        <br />
                         <Row>
                             <Col md={3}>
-                                <Button style={{backgroundColor: "darkblue", fontSize: "110%"}} type="submit">Login</Button>
+                                <Button style={{ backgroundColor: "darkblue", fontSize: "110%" }} type="submit">Login</Button>
                             </Col>
                             <Col md={3}>
                                 <Button style={{ backgroundColor: "darkblue", fontSize: "110%" }} type="button" onClick={props.toggleCreateUserOn}>Sign Up</Button>

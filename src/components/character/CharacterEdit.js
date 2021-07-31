@@ -256,11 +256,11 @@ const EditCharacter = (props) => {
                         <Row>
                             <Col md={4}>
                                 <Label for="HP">HP: </Label>
-                                <Input type="number" min="0" name="HP" value={editHitPoints} onChange={(e) => setEditHitPoints(e.target.value)} />
+                                <Input type="number" name="HP" value={editHitPoints} onChange={(e) => setEditHitPoints(e.target.value)} />
                             </Col>
                             <Col md={4}>
                                 <Label for="level">Level: </Label>
-                                <Input type="number" min="0" name="level" max="20" value={editLevel} onChange={(e) => setEditLevel(e.target.value)} />
+                                <Input type="number" name="level" max="20" value={editLevel} onChange={(e) => setEditLevel(e.target.value)} />
                             </Col>
                             <Col md={4}>
                                 <Label for="experience">Experience: </Label>

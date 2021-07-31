@@ -12,10 +12,10 @@ const ScrollingBanner = () => {
                     <img src="./assets/DruidToken.png" alt="" />
                     <img src="./assets/FighterToken.png" alt="" />
                     <img src="./assets/MonkToken.png" alt="" />
-                    <img src="./assets/PaladinToken.png" alt="" />
+                    {/* <img src="./assets/PaladinToken.png" alt="" /> */}
                     <img src="./assets/RangerToken.png" alt="" />
                     <img src="./assets/RogueToken.png" alt="" />
-                    <img src="./assets/SorcererToken.png" alt="" />
+                    {/* <img src="./assets/SorcererToken.png" alt="" /> */}
                     <img src="./assets/WarlockToken.png" alt="" />
                     <img src="./assets/WizardToken.png" alt="" />
                 </div>

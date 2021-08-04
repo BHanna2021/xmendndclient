@@ -9,8 +9,8 @@ import {
     Row,
     Container
 } from "reactstrap";
-
 import APIURL from '../../helpers/environment';
+import validator from "validator";
 
 const LoginUser = (props) => {
     const [email, setEmail] = useState("");
@@ -34,6 +34,9 @@ const LoginUser = (props) => {
             .then((data) => {
                 props.updateToken(data.sessionToken);
             })
+            .catch(err => {
+                console.error(err)
+            })
     }
 
     return (
@@ -47,12 +50,14 @@ const LoginUser = (props) => {
                     <Form onSubmit={handleSubmit}>
                         <FormGroup>
                             <Label htmlFor="email">Email Address</Label>
-                            <Input
+                            <Input className='w-75'
                                 onChange={(e) => setEmail(e.target.value)}
-                                name="email"
-                                value={email}
                                 type="email"
-                                className="w-75"
+                                name="email"
+                                id="email"
+                                pattern="[a-zA-Z0-9._%+-]+@[a-z0-9.-]+\.[a-zA-Z]{2,4}"
+                                placeholder="AdventurerBob@DnD.com"
+                                title="please enter a valid email"
                                 required
                             />
                         </FormGroup>
@@ -65,6 +70,7 @@ const LoginUser = (props) => {
                                 value={password}
                                 type="password"
                                 className="w-75"
+                                placeholder="SpellFlinger27!"
                                 required
                             />
                         </FormGroup>

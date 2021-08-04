@@ -133,7 +133,7 @@ h3 {
   flex-direction: column;
   align-items: center;
 }
-
+/* Party Sidebar*/
 .rightsidebar {
   grid-column: 3 / 4;
   background-color: #485003;
@@ -151,7 +151,7 @@ h3 {
   max-width: max-content;
 }
 
-/* Sidebar */
+/* Personal Sidebar */
 #sidebar {
   background-color: #485003;
   opacity: .85;

@@ -10,12 +10,10 @@ import {
     Container
 } from "reactstrap";
 import APIURL from '../../helpers/environment';
-import validator from "validator";
 
 const LoginUser = (props) => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
-
 
     let handleSubmit = (event) => {
         event.preventDefault();

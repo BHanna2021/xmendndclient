@@ -10,7 +10,6 @@ import {
     ModalBody,
     Row,
     Col,
-    Container
 } from "reactstrap";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import APIURL from '../../helpers/environment';
